@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:untitled1/pages/admin/adminController.dart';
+import 'package:untitled1/pages/admin/shuttles.dart';
 import 'package:untitled1/pages/admin/userChoose.dart';
 import 'package:untitled1/pages/canteenStudent/tempLogin.dart';
 import 'package:untitled1/pages/complainspage.dart';
@@ -26,6 +27,6 @@ main() async {
   SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Splash(),
+    home: ShuttlesAdmin(),
   ));
 }

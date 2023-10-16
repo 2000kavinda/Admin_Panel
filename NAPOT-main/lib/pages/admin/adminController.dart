@@ -25,209 +25,242 @@ class _TempLogin2State extends State<AdminController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+           
             
             SizedBox(
-              height: 60,
+              height: 40,
             ),
-            ElevatedButton(
-              onPressed: () {
-                String textValue = searchController.text;
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AddMarks(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
-                padding: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Select one option',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black54),)
+                  ],
                 ),
-              ),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.95,
-                height: 50,
-                child: Row(
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+
+            //Admin Button start
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.87,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          'Add Marks',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                      width: MediaQuery.sizeOf(context).width * 0.03,
+                    ),
+
+                    //Start Add Marks
+                    InkWell(
+                      onTap: () {
+                        String textValue = searchController.text;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddMarks(),
                           ),
+                        );
+                      },
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 8, 133, 161),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        width: MediaQuery.sizeOf(context).width * 0.45,
+                        height: 120,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Add Marks',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                    Container(
-                      alignment: Alignment.centerRight,
-                      child: Image.asset('assets/icons/back.png'),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
+                    //End Add Marks
 
-            ElevatedButton(
-              onPressed: () {
-                // Show a search dialog
-                String textValue = searchController.text;
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ShuttlesAdmin(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
-                padding: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.95,
-                height: 50,
-                child: Row(
-                  children: [
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.87,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          'Edite Shuttles',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                      width: MediaQuery.sizeOf(context).width * 0.03,
+                    ),
+
+                    //Start Edit Shuttles
+                    InkWell(
+                      onTap: () {
+                        // Show a search dialog
+                        String textValue = searchController.text;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ShuttlesAdmin(),
                           ),
+                        );
+                      },
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 4, 61, 74),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        width: MediaQuery.sizeOf(context).width * 0.45,
+                        height: 120,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Edite',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Shuttles',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
+                    //End of Edit Shuttles
+
                     Container(
-                      alignment: Alignment.centerRight,
-                      child: Image.asset('assets/icons/back.png'),
+                      width: MediaQuery.sizeOf(context).width * 0.03,
                     ),
                   ],
                 ),
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
 
-            ElevatedButton(
-              onPressed: () {
-                // Show a search dialog
-                String textValue = searchController.text;
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AddBus(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
-                padding: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                SizedBox(
+                  height: 15,
                 ),
-              ),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.95,
-                height: 50,
-                child: Row(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.87,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          'Add Shuttle',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                      width: MediaQuery.sizeOf(context).width * 0.03,
+                    ),
+
+                    //Start Add Marks
+                    InkWell(
+                      onTap: () {
+                        // Show a search dialog
+                        String textValue = searchController.text;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddBus(),
                           ),
+                        );
+                      },
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 8, 133, 161),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        width: MediaQuery.sizeOf(context).width * 0.45,
+                        height: 120,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Add Shuttles',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ],
                         ),
                       ),
                     ),
+                    //End Add Marks
+
                     Container(
-                      alignment: Alignment.centerRight,
-                      child: Image.asset('assets/icons/back.png'),
+                      width: MediaQuery.sizeOf(context).width * 0.03,
                     ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
 
-
-            ElevatedButton(
-              onPressed: () {
-                // Show a search dialog
-                String textValue = searchController.text;
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => PendingApproves(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
-                padding: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.95,
-                height: 50,
-                child: Row(
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.87,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          'Pending Approvals',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                    //Start Edit Shuttles
+                    InkWell(
+                      onTap: () {
+                        // Show a search dialog
+                        String textValue = searchController.text;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PendingApproves(),
                           ),
+                        );
+                      },
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 4, 61, 74),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        width: MediaQuery.sizeOf(context).width * 0.45,
+                        height: 120,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Pending',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Approvals',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
+                    //End of Edit Shuttles
+
                     Container(
-                      alignment: Alignment.centerRight,
-                      child: Image.asset('assets/icons/back.png'),
+                      width: MediaQuery.sizeOf(context).width * 0.03,
                     ),
                   ],
                 ),
-              ),
+              ],
             ),
-            SizedBox(
-              height: 30,
-            ),
-            
-
-
-            
+            //End of Admin buttons
           ],
         ),
       ),

@@ -63,7 +63,22 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shuttle Service'),
+        title: Text(
+          'Shuttle Services',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
+          color: Colors.black54,
+        ),
+        backgroundColor: Colors.white,
+        elevation: 3,
+        bottomOpacity: 0.0,
       ),
       body: Column(
         children: [
@@ -106,10 +121,10 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                       final doc = items[dataIndex].data() as Map<String, dynamic>;
                       final docId = items[dataIndex].id;
 
-                      return ListTile(
-                        trailing: IconButton(
-                          icon: Icon(Icons.more_vert),
-                          onPressed: () {
+                      return Column(
+                        children: [
+                          InkWell(
+                            onTap: () {
                             busNoController.text = doc['busNo'];
                             destinationController.text = doc['destination'];
                             driverController.text = doc['driver'];
@@ -252,7 +267,8 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(),
                                           ),
-                                        ),SizedBox(
+                                        ),
+                                        SizedBox(
                                           height: 15,
                                         ),
                                         Align(
@@ -294,7 +310,8 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(),
                                           ),
-                                        ),SizedBox(
+                                        ),
+                                        SizedBox(
                                           height: 15,
                                         ),
                                         Align(
@@ -336,7 +353,8 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(),
                                           ),
-                                        ),SizedBox(
+                                        ),
+                                        SizedBox(
                                           height: 15,
                                         ),
                                         Align(
@@ -378,7 +396,8 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(),
                                           ),
-                                        ),SizedBox(
+                                        ),
+                                        SizedBox(
                                           height: 15,
                                         ),
                                         Align(
@@ -420,7 +439,8 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(),
                                           ),
-                                        ),SizedBox(
+                                        ),
+                                        SizedBox(
                                           height: 15,
                                         ),
                                         Align(
@@ -462,7 +482,8 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(),
                                           ),
-                                        ),SizedBox(
+                                        ),
+                                        SizedBox(
                                           height: 15,
                                         ),
                                         Align(
@@ -504,7 +525,8 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(),
                                           ),
-                                        ),SizedBox(
+                                        ),
+                                        SizedBox(
                                           height: 15,
                                         ),
                                         Align(
@@ -531,15 +553,21 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                                           height: 60,
                                         ),
                                         Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             MaterialButton(
                                               onPressed: () {
                                                 // Delete operation
-                                                collectionReference.doc(docId).delete().then((_) {
-                                                  Navigator.of(context).pop(); // Close the dialog
+                                                collectionReference
+                                                    .doc(docId)
+                                                    .delete()
+                                                    .then((_) {
+                                                  Navigator.of(context)
+                                                      .pop(); // Close the dialog
                                                 }).catchError((error) {
-                                                  print("Error deleting document: $error");
+                                                  print(
+                                                      "Error deleting document: $error");
                                                 });
                                               },
                                               child: Text('Delete'),
@@ -568,19 +596,147 @@ class _ShuttlesState extends State<ShuttlesAdmin> {
                               ),
                             );
                           },
-                        ),
-                        title: Text(doc['destination']),
-                        subtitle: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(doc['time1']),
-                            Text(doc['busNo']),
-                            Text(doc['vehicleNo']),
-                            Text(doc['driver']),
-                          ],
-                        ),
 
+                            child: Ink(
+                              width: MediaQuery.sizeOf(context).width*0.95,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        width: MediaQuery.sizeOf(context).width*0.3,
+                                        height: 140,
+                                        color: Color.fromARGB(255, 221, 219, 219),
+                                        child: Image.asset("assets/images/busImg.png"),
+                                       
+                                      ),
+                                      Container(
+                                      width:
+                                          MediaQuery.sizeOf(context).width * 0.65,
+                                      height: 140,
+                                      color: Color.fromARGB(255, 221, 219, 219),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                          
+                                          Container(
+                                            width: MediaQuery.sizeOf(context).width*0.65,
+                                            height: 110,
+                                            child: Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Text(
+                                                      'Shuttle No: ',
+                                                      style: TextStyle(
+                                                          fontSize: 20,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Colors.black54),
+                                                    ),
+                                                    Text(
+                                                      doc['busNo'],
+                                                      style: TextStyle(
+                                                          fontSize: 20,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Colors.black54),
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(
+                                                  height: 6,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Text(
+                                                      'Departure Time: ',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: Colors.black54),
+                                                    ),
+                                                    Text(
+                                                      doc['time1'],
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: Colors.black54),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Text(
+                                                      'Reg No: ',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: Colors.black54),
+                                                    ),
+                                                    Text(
+                                                      doc['vehicleNo'],
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: Colors.black54),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Text(
+                                                      doc['driver'],
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: Colors.black54),
+                                                    ),
+                                                  ],
+                                                ),
+                          
+                                              ],
+                                            ),
+                                          ),
+                          
+                                          
+                                          Container(
+                                            width: MediaQuery.sizeOf(context).width*0.65,
+                                            height: 30,
+                                            color: Color.fromARGB(137, 4, 102, 131),
+                                            child: Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(left: 4),
+                                                      child: Text(doc['destination'],style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white70),),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       );
                     },
                   );

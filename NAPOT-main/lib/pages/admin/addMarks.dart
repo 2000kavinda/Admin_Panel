@@ -50,10 +50,19 @@ class _AddMarksState extends State<AddMarks> {
     return Scaffold(
 
         appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [Text("Add student marks")],
+          title: Text('Add Students Marks',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54),),
+          centerTitle: true,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back_ios),
+            iconSize: 25,
+            color: Colors.black54,
           ),
+          backgroundColor: Colors.white,
+          elevation: 3,
+          bottomOpacity: 0.0,
         ),
 
         body: SingleChildScrollView(
@@ -61,115 +70,225 @@ class _AddMarksState extends State<AddMarks> {
             padding: const EdgeInsets.all(14.0),
             child: Column(
               children: [
+                
                 SizedBox(
                   height: 10,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Student ID",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: idController,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Year & Semester",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: ysController,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Module",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: moduleController,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Grade",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: gradeController,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
                 ),
 
+
+                //Start Student ID
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-
-                    MaterialButton(
-                      onPressed: (){
-                        post();
-                      },
-                      child: Text('Post'),
-                      color: Colors.blue,
-                      textColor: Colors.white,
-                      minWidth: 100,
-                      height: 40,
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 10,
+                        bottom: 5,
+                      ),
+                      child: Text(
+                        'Student ID',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
-                )
+                ),
+                Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: TextField(
+                            readOnly: false,
+                            controller: idController,
+                            keyboardType: TextInputType.text,
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.black12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                
+                //End Student ID
+
+
+                //Start Year & Semester
+
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 10,
+                        bottom: 5,
+                      ),
+                      child: Text(
+                        'Year & Semester',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: TextField(
+                            readOnly: false,
+                            controller: ysController,
+                            keyboardType: TextInputType.text,
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.black12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                //End of Year & Semester
+
+                //Start Module
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 10,
+                        bottom: 5,
+                      ),
+                      child: Text(
+                        'Module',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: TextField(
+                            readOnly: false,
+                            controller: moduleController,
+                            keyboardType: TextInputType.text,
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.black12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                //End Module
+
+                //Start Grade
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 10,
+                        bottom: 5,
+                      ),
+                      child: Text(
+                        'Grade',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: TextField(
+                            readOnly: false,
+                            controller: gradeController,
+                            keyboardType: TextInputType.text,
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.black12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                //End Grade
+
+                SizedBox(
+                  height: 30,
+                ),
+
+                //Start Post button
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(25),
+                  child: MaterialButton(
+                    onPressed: () {
+                      post(); 
+                    },
+                    child: Text(
+                      'Post',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    color: Color.fromARGB(255, 6, 114, 187),
+                    textColor: Colors.white,
+                    minWidth: 150,
+                    height: 50,
+                  ),
+                ),
+                //End sign in button
+                //End Post button
               ],
             ),
           ),
