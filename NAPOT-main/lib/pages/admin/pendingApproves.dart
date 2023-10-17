@@ -133,264 +133,644 @@ class _PendingApprovesState extends State<PendingApproves> {
                                     showDialog(
                                       context: context,
                                       builder: (context) => FullScreenDialog(
-                                        content: Container(
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: ListView(
-                                              shrinkWrap: true,
-                                              children: <Widget>[
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text(
-                                                    "Name with initials",
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                TextField(
-                                                  controller: nameController,
-                                                  keyboardType:
-                                                      TextInputType.text,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    border:
-                                                        OutlineInputBorder(),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 15,
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text(
-                                                    "Email",
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                TextField(
-                                                  controller: emailController,
-                                                  keyboardType: TextInputType
-                                                      .emailAddress,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    border:
-                                                        OutlineInputBorder(),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 15,
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text(
-                                                    "Password",
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                TextField(
-                                                  controller:
-                                                      passwordController,
-                                                  keyboardType:
-                                                      TextInputType.text,
-                                                  obscureText: true,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    border:
-                                                        OutlineInputBorder(),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 15,
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text(
-                                                    "Degree programme",
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                TextField(
-                                                  controller: degreeController,
-                                                  keyboardType:
-                                                      TextInputType.text,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    border:
-                                                        OutlineInputBorder(),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 15,
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text(
-                                                    "Batch",
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                TextField(
-                                                  controller: batchController,
-                                                  keyboardType:
-                                                      TextInputType.number,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    border:
-                                                        OutlineInputBorder(),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 15,
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text(
-                                                    "NIC",
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                TextField(
-                                                  controller: nicController,
-                                                  keyboardType:
-                                                      TextInputType.text,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    border:
-                                                        OutlineInputBorder(),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 15,
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.centerLeft,
-                                                  child: Text(
-                                                    "Student ID",
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                TextField(
-                                                  controller: indexController,
-                                                  keyboardType:
-                                                      TextInputType.number,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    border:
-                                                        OutlineInputBorder(),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 60,
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    MaterialButton(
+                                        content: SingleChildScrollView(
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        0.1,
+                                                    child: IconButton(
                                                       onPressed: () {
-                                                        // Delete operation
-                                                        collectionReference
-                                                            .doc(docId)
-                                                            .delete()
-                                                            .then((_) {
-                                                          Navigator.of(context)
-                                                              .pop(); // Close the dialog
-                                                        }).catchError((error) {
-                                                          print(
-                                                              "Error deleting document: $error");
-                                                        });
+                                                        Navigator.of(context)
+                                                            .pop();
                                                       },
-                                                      child: Text('Reject'),
-                                                      color: Colors.red,
-                                                      textColor: Colors.white,
-                                                      minWidth: 100,
-                                                      height: 40,
+                                                      icon: Icon(
+                                                          Icons.arrow_back_ios),
+                                                      iconSize: 25,
+                                                      color: Colors.black54,
                                                     ),
-                                                    MaterialButton(
-                                                      onPressed: () {
-                                                        registerUser();
-                                                        // Update operation
-                                                        //_updateData(docId);
-                                                        collectionReference
-                                                            .doc(docId)
-                                                            .delete()
-                                                            .then((_) {
-                                                          Navigator.of(context)
-                                                              .pop(); // Close the dialog
-                                                        }).catchError((error) {
-                                                          print(
-                                                              "Error deleting document: $error");
-                                                        });
-                                                      },
-                                                      child: Text('Approve'),
-                                                      color: Colors.blue,
-                                                      textColor: Colors.white,
-                                                      minWidth: 100,
-                                                      height: 40,
+                                                  ),
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        0.9,
+                                                    child: Text(
+                                                      'Student Register Approve',
+                                                      style: TextStyle(
+                                                          fontSize: 19,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color:
+                                                              Colors.black54),
                                                     ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height: 20,
+                                              ),
+                                              Column(
+                                                children: [
+                                                  //Start Name
+                                                   Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets.only(
+                                                          left: 10,
+                                                          bottom: 5,
+                                                        ),
+                                                        child: Text(
+                                                          'Name with Initials',
+                                                          style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Container(
+                                                    width:
+                                                        MediaQuery.sizeOf(context)
+                                                            .width,
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 10,
+                                                                  right: 10),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20.0),
+                                                            child: TextField(
+                                                              readOnly: false,
+                                                              controller:
+                                                                  nameController,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .text,
+                                                              decoration:
+                                                                  const InputDecoration(
+                                                                border:
+                                                                    InputBorder
+                                                                        .none,
+                                                                filled: true,
+                                                                fillColor: Colors
+                                                                    .black12,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  //End Name
+
+                                                  //Start Email
+                                                  Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          left: 10,
+                                                          bottom: 5,
+                                                        ),
+                                                        child: Text(
+                                                          'Email',
+                                                          style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                            context)
+                                                        .width,
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 10,
+                                                                  right: 10),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20.0),
+                                                            child: TextField(
+                                                              readOnly: false,
+                                                              controller:
+                                                                  emailController,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .emailAddress,
+                                                              decoration:
+                                                                  const InputDecoration(
+                                                                border:
+                                                                    InputBorder
+                                                                        .none,
+                                                                filled: true,
+                                                                fillColor: Colors
+                                                                    .black12,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  //End Email
+
+                                                  //Start Password
+                                                  Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          left: 10,
+                                                          bottom: 5,
+                                                        ),
+                                                        child: Text(
+                                                          'Password',
+                                                          style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                            context)
+                                                        .width,
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 10,
+                                                                  right: 10),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20.0),
+                                                            child: TextField(
+                                                              readOnly: false,
+                                                              controller:
+                                                                  passwordController,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .text,
+                                                              obscureText: true,
+                                                              decoration:
+                                                                  const InputDecoration(
+                                                                border:
+                                                                    InputBorder
+                                                                        .none,
+                                                                filled: true,
+                                                                fillColor: Colors
+                                                                    .black12,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  //End Password
+
+                                                  //Start Degree
+                                                  Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          left: 10,
+                                                          bottom: 5,
+                                                        ),
+                                                        child: Text(
+                                                          'Degree Programme',
+                                                          style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                            context)
+                                                        .width,
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 10,
+                                                                  right: 10),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20.0),
+                                                            child: TextField(
+                                                              readOnly: false,
+                                                              controller:
+                                                                  degreeController,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .text,
+                                                              decoration:
+                                                                  const InputDecoration(
+                                                                border:
+                                                                    InputBorder
+                                                                        .none,
+                                                                filled: true,
+                                                                fillColor: Colors
+                                                                    .black12,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  //End Degree
+
+                                                  //Start Batch
+                                                  Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          left: 10,
+                                                          bottom: 5,
+                                                        ),
+                                                        child: Text(
+                                                          'Batch',
+                                                          style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                            context)
+                                                        .width,
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 10,
+                                                                  right: 10),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20.0),
+                                                            child: TextField(
+                                                              readOnly: false,
+                                                              controller:
+                                                                  batchController,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .number,
+                                                              decoration:
+                                                                  const InputDecoration(
+                                                                border:
+                                                                    InputBorder
+                                                                        .none,
+                                                                filled: true,
+                                                                fillColor: Colors
+                                                                    .black12,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  //End Batch
+
+                                                  //Start NIC
+                                                  Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          left: 10,
+                                                          bottom: 5,
+                                                        ),
+                                                        child: Text(
+                                                          'NIC',
+                                                          style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                            context)
+                                                        .width,
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 10,
+                                                                  right: 10),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20.0),
+                                                            child: TextField(
+                                                              readOnly: false,
+                                                              controller:
+                                                                  nicController,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .text,
+                                                              decoration:
+                                                                  const InputDecoration(
+                                                                border:
+                                                                    InputBorder
+                                                                        .none,
+                                                                filled: true,
+                                                                fillColor: Colors
+                                                                    .black12,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  //End NIC
+
+                                                  //Start Student ID
+                                                   Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          left: 10,
+                                                          bottom: 5,
+                                                        ),
+                                                        child: Text(
+                                                          'Student ID',
+                                                          style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                            context)
+                                                        .width,
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 10,
+                                                                  right: 10),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20.0),
+                                                            child: TextField(
+                                                              readOnly: false,
+                                                              controller:
+                                                                  indexController,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .number,
+                                                              decoration:
+                                                                  const InputDecoration(
+                                                                border:
+                                                                    InputBorder
+                                                                        .none,
+                                                                filled: true,
+                                                                fillColor: Colors
+                                                                    .black12,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  //End Student ID
+
+                                                  //Start Buttons
+                                                   Row(
+                                                    children: [
+                                                      //Start Delete
+                                                      Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.5,
+                                                        child: Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          25),
+                                                              child:
+                                                                  MaterialButton(
+                                                                onPressed: () {
+                                                                  // Delete operation
+                                                                  collectionReference
+                                                                      .doc(
+                                                                          docId)
+                                                                      .delete()
+                                                                      .then(
+                                                                          (_) {
+                                                                    Navigator.of(
+                                                                            context)
+                                                                        .pop(); // Close the dialog
+                                                                  }).catchError(
+                                                                          (error) {
+                                                                    print(
+                                                                        "Error deleting document: $error");
+                                                                  });
+                                                                },
+                                                                child: Text(
+                                                                  'Reject',
+                                                                  style:
+                                                                      TextStyle(
+                                                                    fontSize:
+                                                                        16,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
+                                                                ),
+                                                                color: Color
+                                                                    .fromARGB(
+                                                                        255,
+                                                                        6,
+                                                                        114,
+                                                                        187),
+                                                                textColor:
+                                                                    Colors
+                                                                        .white,
+                                                                minWidth: 120,
+                                                                height: 40,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      //End Delete
+
+                                                      //Start Update
+                                                      Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.5,
+                                                        child: Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          25),
+                                                              child:
+                                                                  MaterialButton(
+                                                                onPressed: () {
+                                                                  registerUser();
+                                                                  // Update operation
+                                                                  //_updateData(docId);
+                                                                  collectionReference
+                                                                      .doc(
+                                                                          docId)
+                                                                      .delete()
+                                                                      .then(
+                                                                          (_) {
+                                                                    Navigator.of(
+                                                                            context)
+                                                                        .pop(); // Close the dialog
+                                                                  }).catchError(
+                                                                          (error) {
+                                                                    print(
+                                                                        "Error deleting document: $error");
+                                                                  });
+                                                                },
+                                                                child: Text(
+                                                                  'Approve',
+                                                                  style:
+                                                                      TextStyle(
+                                                                    fontSize:
+                                                                        16,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
+                                                                ),
+                                                                color: Color
+                                                                    .fromARGB(
+                                                                        255,
+                                                                        6,
+                                                                        114,
+                                                                        187),
+                                                                textColor:
+                                                                    Colors
+                                                                        .white,
+                                                                minWidth: 120,
+                                                                height: 40,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      //End Update
+                                                    ],
+                                                  ),
+                                                  //End Buttons
+                                                ],
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
