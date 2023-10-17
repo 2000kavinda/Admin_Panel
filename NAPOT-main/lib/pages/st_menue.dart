@@ -3,6 +3,7 @@ import 'package:untitled1/pages/calendar.dart';
 import 'package:untitled1/pages/canteenStudent/MyOrders.dart';
 import 'package:untitled1/pages/canteenStudent/bottomBarCanteen.dart';
 import 'package:untitled1/pages/canteenStudent/tempLogin.dart';
+import 'package:untitled1/pages/eventPage/event.dart';
 import 'package:untitled1/pages/lectureTimeTable/lecTimeTable.dart';
 import 'package:untitled1/pages/libraryStudent/availbleRooms.dart';
 import 'package:untitled1/pages/marks/marks.dart';
@@ -555,7 +556,7 @@ class _StMenuState extends State<StMenu> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Calendar()),
+                                      builder: (context) => EventPage()),
                                 );
                               },
                               child: Ink(

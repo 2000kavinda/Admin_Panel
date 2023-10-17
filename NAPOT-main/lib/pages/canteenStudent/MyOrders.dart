@@ -37,11 +37,51 @@ class _MyOrdersState extends State<MyOrders> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Orders'),
-        centerTitle: true,
+        title: Text(
+          'Back',
+          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54),
+        ),
+        
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
+          color: Colors.black54,
+        ),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        elevation: 0,
+        bottomOpacity: 0.0,
       ),
       body: Column(
         children: [
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10,top: 5),
+                child: Text(
+                  'Notifications',
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black54),
+                ),
+              )
+            ],
+          ),
+
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text('Recent',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.black45),),
+              )
+            ],
+          ),
          
 
           SizedBox(height: 16,),
@@ -90,106 +130,95 @@ class _MyOrdersState extends State<MyOrders> {
 
                     return Column(
                       children: [
-                        
-                        Container(
-                          child: Column(
-                            children: [
-                              Container(
-                                width: MediaQuery.sizeOf(context).width*0.95,
-                                height: 120,
-                                color: Colors.black12,
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      width: MediaQuery.sizeOf(context).width*0.95,
-                                      height: 30,
-                                      color: Colors.blueAccent,
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text(doc['itemName'].toString(),
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
+                        Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: MediaQuery.sizeOf(context).width*0.98,
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        width: MediaQuery.sizeOf(context).width*0.2,
+                                        height: 90,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.all(10.0),
+                                              child: Image.asset('assets/images/Spoon.png'),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        width: MediaQuery.sizeOf(context).width*0.78,
+                                        height: 90,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(left: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Text('You have successfully orderd ',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.black54),),
+                                                  Text(
+                                                    doc['quantity'].toString(),
+                                                    style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        color: Colors.black54),
+                                                  )
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text(
+                                                    doc['itemName'].toString(),
+                                                    style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        color: Colors.black54),
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('Paid LKR.',
+                                                    style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        color: Colors.black54),
+                                                  ),
+                                                  Text(
+                                                    doc['price'].toString(),
+                                                    style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        color: Colors.black54),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
                                           ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(left: 10,top: 5),
-                                        child: Row(
-                                          children: [
-                                            Text('Quantity : ',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            ),
-                                            Text(doc['quantity'].toString(),
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            ),
-                                          ],
                                         ),
                                       ),
-                                    ),
-                                    Container(
-
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(left: 10,top: 5),
-                                        child: Row(
-                                          children: [
-                                            Text('Total amount : LKR ',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            ),
-                                            Text(doc['price'].toString(),
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-
-                                    Container(
-
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(left: 10,top: 5),
-                                        child: Row(
-                                          children: [
-                                            Text('Order Status : ',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            ),
-                                            Text('Pending',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-
-                                  ],
+                                    ],
+                                  ),
                                 ),
-
-                              ),
-                            ],
-                          ),
+                              ],
+                            ),
+                            Container(
+                              width: MediaQuery.sizeOf(context).width*0.95,
+                              height: 1,
+                              color: Colors.black12,
+                            ),
+                          ],
                         ),
                         
                       ],

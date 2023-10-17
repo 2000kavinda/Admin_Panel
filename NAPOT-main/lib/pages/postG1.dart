@@ -24,12 +24,7 @@ class _TabBarDemo1State extends State<TabBarDemo1> {
   final PageController _pageController = PageController(initialPage: 0);
   int currentPage = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    // Start a timer to automatically scroll images
-    startTimer();
-  }
+  
 
   @override
   void dispose() {
@@ -38,21 +33,7 @@ class _TabBarDemo1State extends State<TabBarDemo1> {
     super.dispose();
   }
 
-  void startTimer() {
-    // Set up a timer to automatically scroll to the next page
-    Timer.periodic(Duration(seconds: 2), (timer) {
-      if (currentPage < imagePaths.length - 1) {
-        currentPage++;
-      } else {
-        currentPage = 0;
-      }
-      _pageController.animateToPage(
-        currentPage,
-        duration: Duration(milliseconds: 500),
-        curve: Curves.linear,
-      );
-    });
-  }
+  
 
   @override
   Widget build(BuildContext context) {

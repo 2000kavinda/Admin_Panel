@@ -16,10 +16,13 @@ class Calendar extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
         leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu),
-          iconSize: 35,
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
         ),
+
       ),
       body: SingleChildScrollView(
         child: Center(

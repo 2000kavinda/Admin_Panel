@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:untitled1/pages/admin/adminController.dart';
 import 'package:untitled1/pages/admin/shuttles.dart';
 import 'package:untitled1/pages/admin/userChoose.dart';
+import 'package:untitled1/pages/bottomBar/bottombar.dart';
 import 'package:untitled1/pages/canteenStudent/tempLogin.dart';
 import 'package:untitled1/pages/complainspage.dart';
 import 'package:untitled1/pages/facilities.dart';
@@ -27,6 +28,6 @@ main() async {
   SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: shuttle(),
+    home: Splash(),
   ));
 }

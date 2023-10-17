@@ -50,11 +50,11 @@ class _BottomBarState extends State<BottomBar> {
             padding: EdgeInsets.all(10),
             tabs: [
               GButton(
-                icon: Icons.home_rounded,
+                icon: Icons.home,
                 text: 'Home', // Set the text here using the widget's textValue
               ),
               GButton(
-                icon: Icons.notifications_rounded,
+                icon: Icons.notifications,
                 text: 'Notifications',
               ),
               GButton(
@@ -62,7 +62,7 @@ class _BottomBarState extends State<BottomBar> {
                 text: 'Profile',
               ),
               GButton(
-                icon: Icons.apps_rounded,
+                icon: Icons.grid_view_rounded,
                 text: 'Menu',
               ),
             ],

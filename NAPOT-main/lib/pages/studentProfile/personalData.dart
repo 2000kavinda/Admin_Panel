@@ -15,7 +15,7 @@ class personalData extends StatefulWidget {
 
 class _personalDataState extends State<personalData> {
   final CollectionReference collectionReference =
-  FirebaseFirestore.instance.collection('users');
+      FirebaseFirestore.instance.collection('users');
 
   final batchController = TextEditingController();
   final degreeController = TextEditingController();
@@ -49,13 +49,24 @@ class _personalDataState extends State<personalData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Personal Data'),
+        title: Text(
+          'Student Profile',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
+        ),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Column(
         children: [
           SizedBox(
-            height: 16,
+            height: 10,
           ),
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
@@ -103,68 +114,122 @@ class _personalDataState extends State<personalData> {
                           Container(
                             child: Column(
                               children: [
-                                //Start Profile Picture
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                //Start
+                                Stack(
                                   children: [
-                                    Container(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          0.3,
-                                      height: 150,
-                                      child: CircleAvatar(
-                                        radius: 45,
-                                        backgroundImage:
-                                        NetworkImage(doc['imageLink']),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width,
+                                          height: 200,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      'assets/images/banner2.png'),
+                                                  fit: BoxFit.cover)),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 100),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  new BorderRadius.circular(
+                                                      80.0),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        0.3,
+                                                    height: 150,
+                                                    child: CircleAvatar(
+                                                      radius: 45,
+                                                      backgroundImage:
+                                                          NetworkImage(
+                                                              doc['imageLink']),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            flex: 6,
+                                          ),
+                                          Expanded(
+                                            child: Text(''),
+                                            flex: 9,
+                                          )
+                                        ],
                                       ),
                                     ),
                                   ],
                                 ),
-                                //End Profile picture
 
-                                //Start Profile name
-                                Container(
-                                  child: Text(
-                                    doc['name'],
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                                //End Profile name
-                                SizedBox(
-                                  height: 10,
-                                ),
-
-                                //Start Student ID
-                                Container(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Column(
                                     children: [
-                                      Text(
-                                        'Student ID : ',
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            doc['name'],
+                                            style: TextStyle(
+                                                fontSize: 30,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black54),
+                                          )
+                                        ],
                                       ),
-                                      Text(
-                                        doc['index'],
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'Student at NSBM Green University',
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black54),
+                                          )
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'NSBM Green University',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black54),
+                                          )
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'Colombo district, Western provice, Sri Lanka',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.black54),
+                                          )
+                                        ],
                                       ),
                                     ],
                                   ),
                                 ),
-                                //End Student ID
+                                //End
 
                                 SizedBox(
                                   height: 20,
                                 ),
-
-                                //Start GPA Credit
                                 Row(
                                   children: [
                                     //Start of GPA section
@@ -175,36 +240,37 @@ class _personalDataState extends State<personalData> {
                                       color: Colors.white,
                                       child: Column(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                            MainAxisAlignment.center,
                                         children: [
                                           Container(
                                             decoration: BoxDecoration(
-                                              color: Colors.blueAccent,
+                                              color: Color.fromARGB(
+                                                  255, 126, 127, 130),
                                               borderRadius: BorderRadius.circular(
                                                   8), // Adjust the radius as needed
                                             ),
                                             width: MediaQuery.of(context)
-                                                .size
-                                                .width *
+                                                    .size
+                                                    .width *
                                                 0.4,
                                             height: 75,
                                             child: Row(
                                               children: [
                                                 Container(
                                                   width:
-                                                  MediaQuery.sizeOf(context)
-                                                      .width *
-                                                      0.17,
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.17,
                                                   height: 65,
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Row(
                                                         mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Image.asset(
                                                               'assets/images/GPA.png'),
@@ -215,47 +281,47 @@ class _personalDataState extends State<personalData> {
                                                 ),
                                                 Container(
                                                   width:
-                                                  MediaQuery.sizeOf(context)
-                                                      .width *
-                                                      0.23,
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.23,
                                                   height: 65,
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Row(
                                                         mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Text(
                                                             '3.5',
                                                             style: TextStyle(
                                                               fontSize: 18,
                                                               fontWeight:
-                                                              FontWeight
-                                                                  .bold,
+                                                                  FontWeight
+                                                                      .bold,
                                                               color:
-                                                              Colors.white,
+                                                                  Colors.white,
                                                             ),
                                                           ),
                                                         ],
                                                       ),
                                                       Row(
                                                         mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Text(
                                                             'GPA',
                                                             style: TextStyle(
                                                               fontSize: 20,
                                                               fontWeight:
-                                                              FontWeight
-                                                                  .bold,
+                                                                  FontWeight
+                                                                      .bold,
                                                               color:
-                                                              Colors.white,
+                                                                  Colors.white,
                                                             ),
                                                           ),
                                                         ],
@@ -280,36 +346,37 @@ class _personalDataState extends State<personalData> {
                                       color: Colors.white,
                                       child: Column(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                            MainAxisAlignment.center,
                                         children: [
                                           Container(
                                             decoration: BoxDecoration(
-                                              color: Colors.blueAccent,
+                                              color: Color.fromARGB(
+                                                  255, 126, 127, 130),
                                               borderRadius: BorderRadius.circular(
                                                   8), // Adjust the radius as needed
                                             ),
                                             width: MediaQuery.of(context)
-                                                .size
-                                                .width *
+                                                    .size
+                                                    .width *
                                                 0.4,
                                             height: 75,
                                             child: Row(
                                               children: [
                                                 Container(
                                                   width:
-                                                  MediaQuery.sizeOf(context)
-                                                      .width *
-                                                      0.17,
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.17,
                                                   height: 65,
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Row(
                                                         mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Image.asset(
                                                               'assets/images/credit.png'),
@@ -320,47 +387,47 @@ class _personalDataState extends State<personalData> {
                                                 ),
                                                 Container(
                                                   width:
-                                                  MediaQuery.sizeOf(context)
-                                                      .width *
-                                                      0.23,
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.23,
                                                   height: 65,
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Row(
                                                         mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Text(
                                                             '106',
                                                             style: TextStyle(
                                                               fontSize: 18,
                                                               fontWeight:
-                                                              FontWeight
-                                                                  .bold,
+                                                                  FontWeight
+                                                                      .bold,
                                                               color:
-                                                              Colors.white,
+                                                                  Colors.white,
                                                             ),
                                                           ),
                                                         ],
                                                       ),
                                                       Row(
                                                         mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Text(
                                                             'Credit',
                                                             style: TextStyle(
                                                               fontSize: 20,
                                                               fontWeight:
-                                                              FontWeight
-                                                                  .bold,
+                                                                  FontWeight
+                                                                      .bold,
                                                               color:
-                                                              Colors.white,
+                                                                  Colors.white,
                                                             ),
                                                           ),
                                                         ],
@@ -382,58 +449,71 @@ class _personalDataState extends State<personalData> {
                                   height: 20,
                                 ),
 
-                                //Start personal info
-
-                                Container(
-                                  width: MediaQuery.sizeOf(context).width,
-                                  height: 50,
-                                  color: Colors.blueAccent,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Row(
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.95,
+                                      height: 235,
+                                      color: Colors.black12,
+                                      child: Column(
                                         children: [
-                                          Container(
-                                            width: MediaQuery.sizeOf(context)
-                                                .width *
-                                                0.8,
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 10),
-                                              child: Text(
-                                                'Personal Details',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.white,
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.8,
+                                                height: 40,
+                                                child: Row(
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 10),
+                                                      child: Text(
+                                                        'Personal Information',
+                                                        style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            color:
+                                                                Colors.black54),
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
-                                            ),
-                                          ),
-                                          Container(
-                                            width: MediaQuery.sizeOf(context)
-                                                .width *
-                                                0.2,
-                                            child: IconButton(
-                                              onPressed: () {
-                                                batchController.text =
-                                                doc['batch'];
-                                                degreeController.text =
-                                                doc['degree'];
-                                                emailController.text =
-                                                doc['email'];
-                                                indexController.text =
-                                                doc['index'];
-                                                nameController.text =
-                                                doc['name'];
-                                                nicController.text = doc['nic'];
+                                              Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.15,
+                                                height: 40,
+                                                child: IconButton(
+                                                  onPressed: () {
+                                                    batchController.text =
+                                                        doc['batch'];
+                                                    degreeController.text =
+                                                        doc['degree'];
+                                                    emailController.text =
+                                                        doc['email'];
+                                                    indexController.text =
+                                                        doc['index'];
+                                                    nameController.text =
+                                                        doc['name'];
+                                                    nicController.text =
+                                                        doc['nic'];
 
-                                                showDialog(
-                                                  context: context,
-                                                  builder: (context) =>
-                                                      FullScreenDialog(
+                                                    showDialog(
+                                                      context: context,
+                                                      builder: (context) =>
+                                                          FullScreenDialog(
                                                         content:
-                                                        SingleChildScrollView(
+                                                            SingleChildScrollView(
                                                           child: Container(
                                                             child: Column(
                                                               children: [
@@ -441,40 +521,31 @@ class _personalDataState extends State<personalData> {
                                                                   child: Column(
                                                                     children: [
                                                                       Container(
-                                                                        width: MediaQuery.sizeOf(
-                                                                            context)
+                                                                        width: MediaQuery.sizeOf(context)
                                                                             .width,
-                                                                        height: 50,
+                                                                        height:
+                                                                            50,
                                                                         color: Colors
                                                                             .blueAccent,
-                                                                        child: Row(
+                                                                        child:
+                                                                            Row(
                                                                           children: [
                                                                             Container(
-                                                                              width:
-                                                                              MediaQuery.sizeOf(context).width * 0.2,
-                                                                              child:
-                                                                              IconButton(
-                                                                                onPressed:
-                                                                                    () {
+                                                                              width: MediaQuery.sizeOf(context).width * 0.2,
+                                                                              child: IconButton(
+                                                                                onPressed: () {
                                                                                   Navigator.of(context).pop();
                                                                                 },
-                                                                                icon:
-                                                                                Icon(Icons.arrow_back_ios),
-                                                                                iconSize:
-                                                                                25,
-                                                                                color:
-                                                                                Colors.white,
+                                                                                icon: Icon(Icons.arrow_back_ios),
+                                                                                iconSize: 25,
+                                                                                color: Colors.white,
                                                                               ),
                                                                             ),
                                                                             Container(
-                                                                              width:
-                                                                              MediaQuery.sizeOf(context).width * 0.8,
-                                                                              height:
-                                                                              50,
-                                                                              child:
-                                                                              Column(
-                                                                                mainAxisAlignment:
-                                                                                MainAxisAlignment.center,
+                                                                              width: MediaQuery.sizeOf(context).width * 0.8,
+                                                                              height: 50,
+                                                                              child: Column(
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
                                                                                 children: [
                                                                                   Row(
                                                                                     children: [
@@ -495,7 +566,8 @@ class _personalDataState extends State<personalData> {
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        height: 30,
+                                                                        height:
+                                                                            30,
                                                                       ),
 
                                                                       //Start Full name
@@ -503,44 +575,32 @@ class _personalDataState extends State<personalData> {
                                                                         children: [
                                                                           Padding(
                                                                             padding:
-                                                                            const EdgeInsets.only(
-                                                                              left:
-                                                                              10,
-                                                                              bottom:
-                                                                              5,
+                                                                                const EdgeInsets.only(
+                                                                              left: 10,
+                                                                              bottom: 5,
                                                                             ),
                                                                             child:
-                                                                            Text(
+                                                                                Text(
                                                                               'Full name',
-                                                                              style:
-                                                                              TextStyle(
-                                                                                fontSize:
-                                                                                18,
-                                                                                fontWeight:
-                                                                                FontWeight.bold,
+                                                                              style: TextStyle(
+                                                                                fontSize: 18,
+                                                                                fontWeight: FontWeight.bold,
                                                                               ),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                       Container(
-                                                                        width: MediaQuery.sizeOf(
-                                                                            context)
+                                                                        width: MediaQuery.sizeOf(context)
                                                                             .width,
                                                                         child:
-                                                                        Column(
+                                                                            Column(
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsets
-                                                                                  .only(
-                                                                                  left: 10,
-                                                                                  right: 10),
-                                                                              child:
-                                                                              ClipRRect(
-                                                                                borderRadius:
-                                                                                BorderRadius.circular(20.0),
-                                                                                child:
-                                                                                TextField(
+                                                                              padding: const EdgeInsets.only(left: 10, right: 10),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(20.0),
+                                                                                child: TextField(
                                                                                   controller: nameController,
                                                                                   keyboardType: TextInputType.text,
                                                                                   decoration: const InputDecoration(
@@ -555,7 +615,8 @@ class _personalDataState extends State<personalData> {
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        height: 20,
+                                                                        height:
+                                                                            20,
                                                                       ),
                                                                       //End Full name
 
@@ -564,44 +625,32 @@ class _personalDataState extends State<personalData> {
                                                                         children: [
                                                                           Padding(
                                                                             padding:
-                                                                            const EdgeInsets.only(
-                                                                              left:
-                                                                              10,
-                                                                              bottom:
-                                                                              5,
+                                                                                const EdgeInsets.only(
+                                                                              left: 10,
+                                                                              bottom: 5,
                                                                             ),
                                                                             child:
-                                                                            Text(
+                                                                                Text(
                                                                               'NIC Number',
-                                                                              style:
-                                                                              TextStyle(
-                                                                                fontSize:
-                                                                                18,
-                                                                                fontWeight:
-                                                                                FontWeight.bold,
+                                                                              style: TextStyle(
+                                                                                fontSize: 18,
+                                                                                fontWeight: FontWeight.bold,
                                                                               ),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                       Container(
-                                                                        width: MediaQuery.sizeOf(
-                                                                            context)
+                                                                        width: MediaQuery.sizeOf(context)
                                                                             .width,
                                                                         child:
-                                                                        Column(
+                                                                            Column(
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsets
-                                                                                  .only(
-                                                                                  left: 10,
-                                                                                  right: 10),
-                                                                              child:
-                                                                              ClipRRect(
-                                                                                borderRadius:
-                                                                                BorderRadius.circular(20.0),
-                                                                                child:
-                                                                                TextField(
+                                                                              padding: const EdgeInsets.only(left: 10, right: 10),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(20.0),
+                                                                                child: TextField(
                                                                                   controller: nicController,
                                                                                   keyboardType: TextInputType.text,
                                                                                   decoration: const InputDecoration(
@@ -616,7 +665,8 @@ class _personalDataState extends State<personalData> {
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        height: 20,
+                                                                        height:
+                                                                            20,
                                                                       ),
                                                                       //End NIC
 
@@ -625,44 +675,32 @@ class _personalDataState extends State<personalData> {
                                                                         children: [
                                                                           Padding(
                                                                             padding:
-                                                                            const EdgeInsets.only(
-                                                                              left:
-                                                                              10,
-                                                                              bottom:
-                                                                              5,
+                                                                                const EdgeInsets.only(
+                                                                              left: 10,
+                                                                              bottom: 5,
                                                                             ),
                                                                             child:
-                                                                            Text(
+                                                                                Text(
                                                                               'Student ID',
-                                                                              style:
-                                                                              TextStyle(
-                                                                                fontSize:
-                                                                                18,
-                                                                                fontWeight:
-                                                                                FontWeight.bold,
+                                                                              style: TextStyle(
+                                                                                fontSize: 18,
+                                                                                fontWeight: FontWeight.bold,
                                                                               ),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                       Container(
-                                                                        width: MediaQuery.sizeOf(
-                                                                            context)
+                                                                        width: MediaQuery.sizeOf(context)
                                                                             .width,
                                                                         child:
-                                                                        Column(
+                                                                            Column(
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsets
-                                                                                  .only(
-                                                                                  left: 10,
-                                                                                  right: 10),
-                                                                              child:
-                                                                              ClipRRect(
-                                                                                borderRadius:
-                                                                                BorderRadius.circular(20.0),
-                                                                                child:
-                                                                                TextField(
+                                                                              padding: const EdgeInsets.only(left: 10, right: 10),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(20.0),
+                                                                                child: TextField(
                                                                                   readOnly: true,
                                                                                   controller: indexController,
                                                                                   keyboardType: TextInputType.number,
@@ -678,7 +716,8 @@ class _personalDataState extends State<personalData> {
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        height: 20,
+                                                                        height:
+                                                                            20,
                                                                       ),
                                                                       //End Student ID
 
@@ -687,50 +726,35 @@ class _personalDataState extends State<personalData> {
                                                                         children: [
                                                                           Padding(
                                                                             padding:
-                                                                            const EdgeInsets.only(
-                                                                              left:
-                                                                              10,
-                                                                              bottom:
-                                                                              5,
+                                                                                const EdgeInsets.only(
+                                                                              left: 10,
+                                                                              bottom: 5,
                                                                             ),
                                                                             child:
-                                                                            Text(
+                                                                                Text(
                                                                               'Batch',
-                                                                              style:
-                                                                              TextStyle(
-                                                                                fontSize:
-                                                                                18,
-                                                                                fontWeight:
-                                                                                FontWeight.bold,
+                                                                              style: TextStyle(
+                                                                                fontSize: 18,
+                                                                                fontWeight: FontWeight.bold,
                                                                               ),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                       Container(
-                                                                        width: MediaQuery.sizeOf(
-                                                                            context)
+                                                                        width: MediaQuery.sizeOf(context)
                                                                             .width,
                                                                         child:
-                                                                        Column(
+                                                                            Column(
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsets
-                                                                                  .only(
-                                                                                  left: 10,
-                                                                                  right: 10),
-                                                                              child:
-                                                                              ClipRRect(
-                                                                                borderRadius:
-                                                                                BorderRadius.circular(20.0),
-                                                                                child:
-                                                                                TextField(
+                                                                              padding: const EdgeInsets.only(left: 10, right: 10),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(20.0),
+                                                                                child: TextField(
                                                                                   readOnly: true,
-                                                                                  controller:
-                                                                                  batchController,
-                                                                                  keyboardType:
-                                                                                  TextInputType
-                                                                                      .text,
+                                                                                  controller: batchController,
+                                                                                  keyboardType: TextInputType.text,
                                                                                   decoration: const InputDecoration(
                                                                                     border: InputBorder.none,
                                                                                     filled: true,
@@ -743,7 +767,8 @@ class _personalDataState extends State<personalData> {
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        height: 20,
+                                                                        height:
+                                                                            20,
                                                                       ),
                                                                       //End Batch
 
@@ -752,50 +777,35 @@ class _personalDataState extends State<personalData> {
                                                                         children: [
                                                                           Padding(
                                                                             padding:
-                                                                            const EdgeInsets.only(
-                                                                              left:
-                                                                              10,
-                                                                              bottom:
-                                                                              5,
+                                                                                const EdgeInsets.only(
+                                                                              left: 10,
+                                                                              bottom: 5,
                                                                             ),
                                                                             child:
-                                                                            Text(
+                                                                                Text(
                                                                               'Degree',
-                                                                              style:
-                                                                              TextStyle(
-                                                                                fontSize:
-                                                                                18,
-                                                                                fontWeight:
-                                                                                FontWeight.bold,
+                                                                              style: TextStyle(
+                                                                                fontSize: 18,
+                                                                                fontWeight: FontWeight.bold,
                                                                               ),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                       Container(
-                                                                        width: MediaQuery.sizeOf(
-                                                                            context)
+                                                                        width: MediaQuery.sizeOf(context)
                                                                             .width,
                                                                         child:
-                                                                        Column(
+                                                                            Column(
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsets
-                                                                                  .only(
-                                                                                  left: 10,
-                                                                                  right: 10),
-                                                                              child:
-                                                                              ClipRRect(
-                                                                                borderRadius:
-                                                                                BorderRadius.circular(20.0),
-                                                                                child:
-                                                                                TextField(
+                                                                              padding: const EdgeInsets.only(left: 10, right: 10),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(20.0),
+                                                                                child: TextField(
                                                                                   readOnly: true,
-                                                                                  controller:
-                                                                                  degreeController,
-                                                                                  keyboardType:
-                                                                                  TextInputType
-                                                                                      .text,
+                                                                                  controller: degreeController,
+                                                                                  keyboardType: TextInputType.text,
                                                                                   decoration: const InputDecoration(
                                                                                     border: InputBorder.none,
                                                                                     filled: true,
@@ -808,7 +818,8 @@ class _personalDataState extends State<personalData> {
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        height: 20,
+                                                                        height:
+                                                                            20,
                                                                       ),
                                                                       //End Degree
 
@@ -817,50 +828,35 @@ class _personalDataState extends State<personalData> {
                                                                         children: [
                                                                           Padding(
                                                                             padding:
-                                                                            const EdgeInsets.only(
-                                                                              left:
-                                                                              10,
-                                                                              bottom:
-                                                                              5,
+                                                                                const EdgeInsets.only(
+                                                                              left: 10,
+                                                                              bottom: 5,
                                                                             ),
                                                                             child:
-                                                                            Text(
+                                                                                Text(
                                                                               'Email',
-                                                                              style:
-                                                                              TextStyle(
-                                                                                fontSize:
-                                                                                18,
-                                                                                fontWeight:
-                                                                                FontWeight.bold,
+                                                                              style: TextStyle(
+                                                                                fontSize: 18,
+                                                                                fontWeight: FontWeight.bold,
                                                                               ),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                       Container(
-                                                                        width: MediaQuery.sizeOf(
-                                                                            context)
+                                                                        width: MediaQuery.sizeOf(context)
                                                                             .width,
                                                                         child:
-                                                                        Column(
+                                                                            Column(
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsets
-                                                                                  .only(
-                                                                                  left: 10,
-                                                                                  right: 10),
-                                                                              child:
-                                                                              ClipRRect(
-                                                                                borderRadius:
-                                                                                BorderRadius.circular(20.0),
-                                                                                child:
-                                                                                TextField(
+                                                                              padding: const EdgeInsets.only(left: 10, right: 10),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(20.0),
+                                                                                child: TextField(
                                                                                   readOnly: true,
-                                                                                  controller:
-                                                                                  emailController,
-                                                                                  keyboardType:
-                                                                                  TextInputType
-                                                                                      .text,
+                                                                                  controller: emailController,
+                                                                                  keyboardType: TextInputType.text,
                                                                                   decoration: const InputDecoration(
                                                                                     border: InputBorder.none,
                                                                                     filled: true,
@@ -873,27 +869,28 @@ class _personalDataState extends State<personalData> {
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        height: 20,
+                                                                        height:
+                                                                            20,
                                                                       ),
                                                                       //End Email
 
                                                                       SizedBox(
-                                                                        height: 30,
+                                                                        height:
+                                                                            30,
                                                                       ),
 
                                                                       //Start Update button
                                                                       Container(
-                                                                        child: Column(
+                                                                        child:
+                                                                            Column(
                                                                           children: [
                                                                             Row(
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
                                                                                 MaterialButton(
-                                                                                  onPressed:
-                                                                                      () {
+                                                                                  onPressed: () {
                                                                                     // Update operation
-                                                                                    _updateData(
-                                                                                        docId);
+                                                                                    _updateData(docId);
                                                                                   },
                                                                                   child: Text(
                                                                                     'Update',
@@ -902,15 +899,10 @@ class _personalDataState extends State<personalData> {
                                                                                       fontWeight: FontWeight.bold,
                                                                                     ),
                                                                                   ),
-                                                                                  color: Colors
-                                                                                      .blue,
-                                                                                  textColor:
-                                                                                  Colors
-                                                                                      .white,
-                                                                                  minWidth:
-                                                                                  100,
-                                                                                  height:
-                                                                                  40,
+                                                                                  color: Colors.blue,
+                                                                                  textColor: Colors.white,
+                                                                                  minWidth: 100,
+                                                                                  height: 40,
                                                                                 ),
                                                                               ],
                                                                             ),
@@ -918,364 +910,339 @@ class _personalDataState extends State<personalData> {
                                                                         ),
                                                                       ),
                                                                       //End Update button
-
-
-
-
-
-
-
-
-
-
-
-
-
                                                                     ],
                                                                   ),
                                                                 ),
-
                                                               ],
                                                             ),
                                                           ),
                                                         ),
                                                       ),
-                                                );
-                                              },
-                                              icon: Icon(
-                                                Icons.edit_note,
-                                                color: Colors.white,
-                                                size: 30,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                //End Personal info
-                                //Start Personal info
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      //Start user name
-                                      Row(
-                                        children: [
-                                          Container(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15, top: 10),
-                                              child: Text(
-                                                'User Name',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          Container(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15, top: 2),
-                                              child: Text(
-                                                doc['name'],
-                                                style: TextStyle(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      //End User name
-                                      //Start National ID
-                                      Row(
-                                        children: [
-                                          Container(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15, top: 10),
-                                              child: Text(
-                                                'National ID',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          Container(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15, top: 2),
-                                              child: Text(
-                                                doc['nic'],
-                                                style: TextStyle(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      //End National ID
-                                      //Start Email
-                                      Row(
-                                        children: [
-                                          Container(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15, top: 10),
-                                              child: Text(
-                                                'Email Address',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          Container(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15, top: 2),
-                                              child: Text(
-                                                doc['email'],
-                                                style: TextStyle(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      //End Email
-
-                                      //Start degree
-                                      Row(
-                                        children: [
-                                          Container(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15, top: 10),
-                                              child: Text(
-                                                'Degree Programme',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          Container(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15, top: 2),
-                                              child: Text(
-                                                doc['degree'],
-                                                style: TextStyle(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      //End degree
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-
-                                      //Start Certificate batch
-                                      Container(
-                                        width: MediaQuery.sizeOf(context).width,
-                                        height: 40,
-                                        color: Colors.blueAccent,
-                                        child: Column(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Padding(
-                                                  padding:
-                                                  const EdgeInsets.only(
-                                                      left: 10),
-                                                  child: Text(
-                                                    'Certification & Badges',
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                      FontWeight.bold,
-                                                      color: Colors.white,
-                                                    ),
+                                                    );
+                                                  },
+                                                  icon: Icon(
+                                                    Icons.edit_note,
+                                                    color: Colors.black54,
+                                                    size: 30,
                                                   ),
                                                 ),
-                                              ],
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(left: 10),
+                                                child: Text(
+                                                  'User Name',
+                                                  style: TextStyle(
+                                                      fontSize: 16,
+                                                      fontWeight: FontWeight.w500,
+                                                      color: Colors.black54),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10),
+                                                child: Text(
+                                                  doc['name'],
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.black54),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+
+                                          //Start NIC
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10),
+                                                child: Text(
+                                                  'National ID Number',
+                                                  style: TextStyle(
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: Colors.black54),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10),
+                                                child: Text(
+                                                  doc['nic'],
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.black54),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          //End NIC
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+
+                                          //Start Email
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10),
+                                                child: Text(
+                                                  'Email Address',
+                                                  style: TextStyle(
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: Colors.black54),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10),
+                                                child: Text(
+                                                  doc['email'],
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.black54),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          //End Email
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+
+                                          //Start degree
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10),
+                                                child: Text(
+                                                  'Degree Programme',
+                                                  style: TextStyle(
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: Colors.black54),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10),
+                                                child: Text(
+                                                  doc['degree'],
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.black54),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          //End degree
+
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+
+                                    //Start Certificate and Badge
+                                    InkWell(
+                                      onTap: () {
+                                        // Add your button's functionality here
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  AllCertificates(
+                                                      textValue: doc['index'])),
+                                        );
+                                      },
+                                      child: Ink(
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.sizeOf(context).width*0.95,
+                                              height: 60,
+                                              color: Colors.black12,
+                                              child: Column(
+                                                
+                                                children: [
+                                                  Row(
+                                                    
+                                                    children: [
+                                                      Container(
+                                                        width: MediaQuery.sizeOf(context).width*0.95,
+                                                        height: 40,
+                                                       
+                                                        child: Row(
+                                                          
+                                                          children: [
+                                                            Padding(
+                                                              padding: const EdgeInsets.only(left: 10),
+                                                              child: Text('Certificates',
+                                                              style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.black54),),
+                                                            ),
+                                                            
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding: const EdgeInsets.only(left: 10),
+                                                        child: Text(
+                                                          'Click here to view Certifications that I have got',
+                                                          style: TextStyle(
+                                                              fontSize: 14,
+                                                              fontWeight: FontWeight.w400,
+                                                              color: Colors.black54),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ],
                                         ),
                                       ),
-                                      //End Certificate batch
+                                    ),
+                                    //End Certificate and Badge
 
-                                      SizedBox(
-                                        height: 10,
-                                      ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
 
-                                      //Start buttons
-                                      //Start Certification
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          // Add your button's functionality here
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    AllCertificates(
-                                                        textValue:
-                                                        doc['index'])),
-                                          );
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          primary: Colors.blueAccent,
-                                          padding: EdgeInsets.zero,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                            BorderRadius.circular(10),
-                                          ),
-                                        ),
-                                        child: Container(
-                                          width: MediaQuery.of(context)
-                                              .size
-                                              .width *
-                                              0.95,
-                                          height: 50,
-                                          child: Row(
-                                            children: [
-                                              Container(
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.87,
-                                                child: Padding(
-                                                  padding:
-                                                  const EdgeInsets.only(
-                                                      left: 15),
-                                                  child: Text(
-                                                    'Cerificaations',
-                                                    style: TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                      FontWeight.bold,
-                                                      color: Colors.white,
-                                                    ),
+
+                                    //Start Badges
+                                    InkWell(
+                                      onTap: () {
+                                        // Add your button's functionality here
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => AllBadges(
+                                                  textValue: doc['index'])),
+                                        );
+                                      },
+                                      child: Ink(
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  0.95,
+                                              height: 60,
+                                              color: Colors.black12,
+                                              child: Column(
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.95,
+                                                        height: 40,
+                                                        child: Row(
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsets
+                                                                      .only(
+                                                                      left: 10),
+                                                              child: Text(
+                                                                'Badges',
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        18,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    color: Colors
+                                                                        .black54),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                ),
-                                              ),
-                                              Container(
-                                                alignment:
-                                                Alignment.centerRight,
-                                                child: Image.asset(
-                                                    'assets/icons/back.png'),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      //End Certification
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-
-                                      //Start Badges
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          // Add your button's functionality here
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => AllBadges(
-                                                    textValue: doc['index'])),
-                                          );
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          primary: Colors.blueAccent,
-                                          padding: EdgeInsets.zero,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                            BorderRadius.circular(10),
-                                          ),
-                                        ),
-                                        child: Container(
-                                          width: MediaQuery.of(context)
-                                              .size
-                                              .width *
-                                              0.95,
-                                          height: 50,
-                                          child: Row(
-                                            children: [
-                                              Container(
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.87,
-                                                child: Padding(
-                                                  padding:
-                                                  const EdgeInsets.only(
-                                                      left: 15),
-                                                  child: Text(
-                                                    'Badges',
-                                                    style: TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                      FontWeight.bold,
-                                                      color: Colors.white,
-                                                    ),
+                                                  Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(left: 10),
+                                                        child: Text(
+                                                          'Click here to view Badges that I have got',
+                                                          style: TextStyle(
+                                                              fontSize: 14,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                              color: Colors
+                                                                  .black54),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                ),
+                                                ],
                                               ),
-                                              Container(
-                                                alignment:
-                                                Alignment.centerRight,
-                                                child: Image.asset(
-                                                    'assets/icons/back.png'),
-                                              ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                      SizedBox(
-                                        height: 30,
-                                      ),
-                                      //End Badges
+                                    ),
+                                    //End Badges
 
-                                      //End buttons
-                                    ],
-                                  ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                  ],
                                 ),
-                                //End Personal info
                               ],
                             ),
                           ),

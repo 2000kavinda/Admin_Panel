@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:untitled1/pages/facilities.dart';
+import 'package:untitled1/pages/postG1.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -55,6 +57,31 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: 10,
+            ),
+            // Row(
+            //   children: [
+            //     Padding(
+            //       padding: const EdgeInsets.only(top: 10,left: 10),
+            //       child: Text('NAPOT Mobile',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w500,color: Colors.black54),),
+            //     ),
+            //   ],
+            // ),
+            // Row(
+            //   children: [
+            //     Padding(
+            //       padding: const EdgeInsets.only(left: 10,bottom: 10),
+            //       child: Text(
+            //         'NSBM Green University',
+            //         style: TextStyle(
+            //             fontSize: 14,
+            //             fontWeight: FontWeight.w500,
+            //             color: Colors.black54),
+            //       ),
+            //     ),
+            //   ],
+            // ),
             Stack(
               children: [
                 InkWell(
@@ -183,7 +210,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                     InkWell(
                       onTap: () {
-                        // Add your button click logic here
+                        // Navigate to another page when container is clicked
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TabBarDemo1()),
+                        );
                       },
                       child: Column(
                         children: [
@@ -218,8 +249,12 @@ class _HomePageState extends State<HomePage> {
                       width: 22,
                     ),
                     InkWell(
-                      onTap: () {
-                        // Add your button click logic here
+                          onTap: () {
+                        // Navigate to another page when container is clicked
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TabBarDemo()),
+                        );
                       },
                       child: Column(
                         children: [

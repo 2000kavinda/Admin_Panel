@@ -64,18 +64,18 @@ class _availableRoomsState extends State<availableRooms> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Library Room Booking',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          'Library Rooms Booking',
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.blueAccent,
+        centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
         ),
-        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
       ),
       body: Column(
         children: [

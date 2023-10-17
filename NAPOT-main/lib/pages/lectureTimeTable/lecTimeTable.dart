@@ -14,16 +14,17 @@ class _DemoPageState extends State<LectureTimeTable> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Lecture Time Table',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
+       appBar: AppBar(
+        title: Text(
+          'Lecture Time Table',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
-         leading: IconButton(
-          onPressed: () {},
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
         ),

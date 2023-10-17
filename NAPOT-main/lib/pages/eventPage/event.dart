@@ -15,14 +15,15 @@ class _DemoPageState extends State<EventPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Calendar & Events',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
+        title: Text(
+          'Calendar & Events',
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
         ),
