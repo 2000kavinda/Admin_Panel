@@ -66,13 +66,11 @@ class _AddMarksState extends State<AddMarks> {
         ),
 
         body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Column(
+          child: Column(
               children: [
                 
                 SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
 
 
@@ -287,11 +285,15 @@ class _AddMarksState extends State<AddMarks> {
                     height: 50,
                   ),
                 ),
-                //End sign in button
+                
                 //End Post button
+
+                SizedBox(
+                  height: 20,
+                ),
               ],
             ),
-          ),
+          
         )
     );
   }

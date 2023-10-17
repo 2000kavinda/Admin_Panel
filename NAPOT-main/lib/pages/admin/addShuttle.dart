@@ -87,454 +87,945 @@ class _AddBusState extends State<AddBus> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-        appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [Text("Add new shuttle")],
+       appBar: AppBar(
+          title: Text(
+            'Add New Shuttles',
+            style:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
           ),
+          centerTitle: true,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back_ios),
+            iconSize: 25,
+            color: Colors.black54,
+          ),
+          backgroundColor: Colors.white,
+          elevation: 3,
+          bottomOpacity: 0.0,
         ),
 
         body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Column(
+          child:Column(
               children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Bus Route",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: destinationController,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Shuttle Number",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: busNoController,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Vehicle Number",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: vehicleNoController,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Driver",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: driverController,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Stop 01",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: stop1Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Arrival time 01",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: time1Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Stop 02",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: stop2Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Arrival time 02",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: time2Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Stop 03",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: stop3Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Arrival time 03",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: time3Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Stop 04",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: stop4Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Arrival time 04",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: time4Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Stop 05",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: stop5Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Arrival time 05",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: time5Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Stop 06",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: stop6Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Arrival time 06",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: time6Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Stop 07",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: stop7Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Arrival time 07",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: time7Controller,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                SizedBox(
-                  height: 60,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //Start Details section
+                Column(
                   children: [
-                    MaterialButton(
-                      onPressed: (){},
-                      child: Text('Cancel'),
-                      color: Colors.blue,
-                      textColor: Colors.white,
-                      minWidth: 100,
-                      height: 40,
+                    SizedBox(
+                      height: 20,
                     ),
-                    MaterialButton(
-                      onPressed: (){
-                        post();
-                      },
-                      child: Text('Post'),
-                      color: Colors.blue,
-                      textColor: Colors.white,
-                      minWidth: 100,
-                      height: 40,
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Bus Route',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: destinationController,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+
+                    //Start Shuttle number
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Shuttle number',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: busNoController,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Shuttle number
+
+                    //Start vehicle number
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Vehicle number',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: vehicleNoController,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End vehicle number
+
+                    //Start Driver
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Driver',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: driverController,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Driver
+                    //Start Stop 1
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Stop 01',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: stop1Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Stop1
+
+                    //Start Arrival time 01
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Arrival Time 01',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: time1Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Arrival time 01
+
+                    //Start Stop2
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Stop 02',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: stop2Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Stop2
+
+                    //Start Arrival time 02
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Arrival Time 02',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: time2Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Arrival time 02
+
+                    //Start Stop 03
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Stop 03',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: stop3Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Stop 03
+
+                    //Start Arrival time 03
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Arrival time 03',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: time3Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Arrival time 03
+
+                    //Start Stop 04
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Stop 04',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: stop4Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Stop 04
+
+                    //Start Arrival time 04
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Arrival time 04',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: time4Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Arrival time 04
+
+                    //Start stop 5
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Stop 05',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: stop5Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End stop5
+
+                    //Start Arrival 5
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Arrival Time 05',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: time5Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Arrival 5
+
+                    //Start Stop 6
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Stop 06',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: stop6Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Stop 6
+
+                    //Start Arrival time 6
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Arrival time 06',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: time6Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Arrival time 6
+
+                    //Start Stop 7
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Stop 07',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: stop7Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Stop 7
+
+                    //Start Arrival time 7
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Arrival time 07',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                controller: time7Controller,
+                                keyboardType: TextInputType.text,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End Arrival time 7
+
+                    SizedBox(
+                      height: 20,
+                    ),
+
+                    //Start buttons
+                    Row(
+                      children: [
+                        //Start Delete
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 0.5,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text(
+                                    'Cancel',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  color: Color.fromARGB(255, 6, 114, 187),
+                                  textColor: Colors.white,
+                                  minWidth: 120,
+                                  height: 40,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        //End Delete
+
+                        //Start Update
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 0.5,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    post();
+                                  },
+                                  child: Text(
+                                    'Post',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  color: Color.fromARGB(255, 6, 114, 187),
+                                  textColor: Colors.white,
+                                  minWidth: 120,
+                                  height: 40,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        //End Update
+                      ],
+                    ),
+                    //End buttons
                   ],
-                )
+                ),
+                //End Details Section
+                SizedBox(
+                  height: 20,
+                ),
+
+
+
+
+
+
+
               ],
             ),
-          ),
+          
         )
     );
   }
