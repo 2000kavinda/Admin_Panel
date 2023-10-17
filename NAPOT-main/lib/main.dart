@@ -27,6 +27,6 @@ main() async {
   SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: AdminController(),
+    home: shuttle(),
   ));
 }
