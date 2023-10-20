@@ -3,6 +3,7 @@ import 'package:untitled1/pages/calendar.dart';
 import 'package:untitled1/pages/canteenStudent/MyOrders.dart';
 import 'package:untitled1/pages/canteenStudent/bottomBarCanteen.dart';
 import 'package:untitled1/pages/canteenStudent/tempLogin.dart';
+import 'package:untitled1/pages/complainspage.dart';
 import 'package:untitled1/pages/eventPage/event.dart';
 import 'package:untitled1/pages/lectureTimeTable/lecTimeTable.dart';
 import 'package:untitled1/pages/libraryStudent/availbleRooms.dart';
@@ -13,8 +14,8 @@ import 'package:untitled1/pages/q&a/allQA.dart';
 import 'package:untitled1/pages/shuttleService/shuttle.dart';
 import 'package:untitled1/pages/studentProfile/personalData.dart';
 import 'package:untitled1/pages/studentProfile/tempLogin.dart';
-import 'package:untitled1/pages/submitpage.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 
 class StMenu extends StatefulWidget {
   final String textValue;
@@ -44,12 +45,18 @@ class _StMenuState extends State<StMenu> {
                 ),
                 //Start button
                 InkWell(
-                  onTap: () {
-                    // Navigate to another page when container is clicked
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AnotherPage()),
-                    );
+                  onTap: () async {
+                    final url =
+                        'https://qrcodescan.in';
+
+                    if (await canLaunch(url)) {
+                      await launch(
+                        url,
+                        forceSafariVC: true,
+                        forceWebView: true,
+                        enableJavaScript: true,
+                      );
+                    }
                   },
                   child: Ink(
                     decoration: BoxDecoration(
@@ -943,7 +950,7 @@ class _StMenuState extends State<StMenu> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => AnotherPage()),
+                                  builder: (context) => ComplaintForm()),
                             );
                           },
                           child: Ink(

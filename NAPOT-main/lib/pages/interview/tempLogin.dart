@@ -42,7 +42,7 @@ class _TempLoginState extends State<TempLogin> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
-                          'Student ID Verify',
+                          'Student Profile Search',
                           style: TextStyle(
                               fontSize: 28, fontWeight: FontWeight.bold),
                         ),
@@ -60,7 +60,7 @@ class _TempLoginState extends State<TempLogin> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
-                          'Please Enter Your ID',
+                          'Please Enter Student ID',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
@@ -130,7 +130,7 @@ class _TempLoginState extends State<TempLogin> {
                   ); // Call loginUser here
                 },
                 child: Text(
-                  'Sign in',
+                  'Search Student',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

@@ -73,42 +73,22 @@ class _ComplaintFormState extends State<ComplaintForm> {
                   ],
                 ),
                 SizedBox(height: 10),
-                Row(
-                  children: [
-                    Text('You can attach document by clicking on the add button.'),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            _attachDocument = !_attachDocument;
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(primary: Colors.green),
-                        child: Text('Add Document'),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20),
+               
+                SizedBox(height: 60),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        _formKey.currentState!.reset();
-                        setState(() {
-                          _attachDocument = false;
-                        });
-                      },
-                      style: ElevatedButton.styleFrom(primary: Colors.blue),
-                      child: Text('Cancel'),
-                    ),
-                    SizedBox(width: 20),
-                    ElevatedButton(
-                      onPressed: _submitForm,
-                      style: ElevatedButton.styleFrom(primary: Colors.blue),
-                      child: Text('Post'),
+                   
+
+                  
+                    Container(
+                      width: 120,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: _submitForm,
+                        style: ElevatedButton.styleFrom(primary: Colors.blue),
+                        child: Text('Post',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                      ),
                     ),
                   ],
                 ),

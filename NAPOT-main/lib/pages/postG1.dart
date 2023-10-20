@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:untitled1/pages/postG2.dart';
 
 
 
@@ -115,7 +116,12 @@ class _TabBarDemo1State extends State<TabBarDemo1> {
                           SizedBox(height: 16),
                           ElevatedButton(
                             onPressed: () {
-                              // Add your button click logic here
+                              // Navigate to another page when container is clicked
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => TabBarDemo2()),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               primary: Colors.green,
