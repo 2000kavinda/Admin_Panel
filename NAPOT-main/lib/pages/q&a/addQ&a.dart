@@ -42,19 +42,23 @@ class _AddQAState extends State<AddQA> {
     return Scaffold(
 
         appBar: AppBar(
-          title: Text('Post a Question',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          title: Text(
+            'Post a Question',
+            style:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
           ),
           centerTitle: true,
           leading: IconButton(
-          onPressed: () {
-            Navigator.of(context) .pop();
-          },
-          icon: Icon(Icons.arrow_back_ios),
-          iconSize: 25,
-        ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back_ios),
+            iconSize: 25,
+            color: Colors.black54,
+          ),
+          backgroundColor: Colors.white,
+          elevation: 3,
+          bottomOpacity: 0.0,
         ),
 
         body: SingleChildScrollView(
@@ -122,7 +126,7 @@ class _AddQAState extends State<AddQA> {
                         fontWeight: FontWeight.bold
                       ),
                       ),
-                      color: Colors.blue,
+                      color: Color.fromARGB(255, 77, 88, 97),
                       textColor: Colors.white,
                       minWidth: 100,
                       height: 40,

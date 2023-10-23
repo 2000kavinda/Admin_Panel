@@ -37,13 +37,22 @@ class _AllOrdersState extends State<AllOrders> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('All Orders'),
+        title: Text(
+          'All Orders',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
+        ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
+          color: Colors.black54,
         ),
+        backgroundColor: Colors.white,
+        elevation: 3,
+        bottomOpacity: 0.0,
       ),
       body: Column(
         children: [
@@ -103,7 +112,7 @@ class _AllOrdersState extends State<AllOrders> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            color: Colors.blueAccent,
+                            color: Color.fromARGB(255, 77, 88, 97),
                             textColor: Colors.white,
                           ),
                         ),
@@ -166,106 +175,142 @@ class _AllOrdersState extends State<AllOrders> {
 
                     return Column(
                       children: [
-                        //Start Order Detail box 
+
                         Container(
-                          width: MediaQuery.sizeOf(context).width * 0.95,
-                          height: 200,
-                          color: Colors.black12,
-                          child: Column(
+                          width: MediaQuery.sizeOf(context).width*0.95,
+                          height: 150,
+                          
+                          decoration: BoxDecoration(
+                            color: Colors.black12,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Row(
                             children: [
                               Container(
-                                width: MediaQuery.sizeOf(context).width * 0.95,
-                                height: 40,
-                                color: Colors.blueAccent,
+                                width: MediaQuery.sizeOf(context).width*0.3,
+                                height: 150,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      doc['itemName'].toString(),
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                    ),
+                                    Image.asset('assets/images/order.png')
                                   ],
                                 ),
                               ),
                               Container(
+                                width: MediaQuery.sizeOf(context).width*0.65,
+                                height: 150,
+                              
                                 child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 10, top: 10),
-                                      child: Row(
-                                        children: [
-                                          Text(
-                                            'Quantity : ',
-                                            style: TextStyle(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                          Text(
-                                            doc['quantity'].toString(),
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                    SizedBox(
+                                      height: 14,
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 10, top: 10),
-                                      child: Row(
-                                        children: [
-                                          Text(
-                                            'Price : ',
-                                            style: TextStyle(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                          Text(
-                                            doc['price'].toString(),
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 10),
+                                          child: Text(doc['itemName'],style: TextStyle(
+                                            fontSize: 18,fontWeight: FontWeight.w600,color: Colors.black54,
+                                          ),),
+                                        ),
+                                      ],
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 10, top: 10),
-                                      child: Row(
-                                        children: [
-                                          Text(
-                                            'Student ID : ',
-                                            style: TextStyle(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                          Text(
-                                            doc['id'].toString(),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: Text(
+                                            doc['quantity'],
                                             style: TextStyle(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500,
+                                              color: Colors.black54,
                                             ),
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: Text(
+                                            'Postion',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black54,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: Text(
+                                            'Paid LKR',
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black54,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: Text(
+                                            doc['price'],
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black54,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: Text(
+                                            'Student ID',
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black54,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: Text(
+                                            doc['id'],
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black54,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                     SizedBox(
                                       height: 10,
                                     ),
+
                                     Row(
                                       children: [
                                         Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  0.475,
+                                          width: MediaQuery.sizeOf(context).width*0.32,
+                                          height:50,
+                                         
                                           child: Column(
                                             children: [
                                               MaterialButton(
@@ -280,24 +325,29 @@ class _AllOrdersState extends State<AllOrders> {
                                                         "Error deleting document: $error");
                                                   });
                                                 },
-                                                child: Text('Cancel',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.bold,
+                                                child: Text(
+                                                  'Cancel',
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                                 ),
-                                                ),
-                                                color: Colors.red,
+                                               color: Color.fromARGB(
+                                                    255, 77, 88, 97),
                                                 textColor: Colors.white,
                                                 minWidth: 100,
                                                 height: 40,
                                               ),
                                             ],
                                           ),
+
                                         ),
                                         Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
-                                                  0.475,
+                                                  0.32,
+                                          height: 50,
+                                          
                                           child: Column(
                                             children: [
                                               MaterialButton(
@@ -312,13 +362,15 @@ class _AllOrdersState extends State<AllOrders> {
                                                         "Error deleting document: $error");
                                                   });
                                                 },
-                                                child: Text('Complete',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.bold,
+                                                child: Text(
+                                                  'Complete',
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                                 ),
-                                                ),
-                                                color: Colors.green,
+                                                color: Color.fromARGB(
+                                                    255, 77, 88, 97),
                                                 textColor: Colors.white,
                                                 minWidth: 100,
                                                 height: 40,
@@ -328,14 +380,14 @@ class _AllOrdersState extends State<AllOrders> {
                                         ),
                                       ],
                                     ),
+
+                                    
                                   ],
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        //End Order Details  box
-                        
                       ],
                     );
                   },

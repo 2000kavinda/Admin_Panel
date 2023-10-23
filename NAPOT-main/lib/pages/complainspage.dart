@@ -40,63 +40,246 @@ class _ComplaintFormState extends State<ComplaintForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Complains Form'),
+        title: Text(
+          'Complains',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
+          color: Colors.black54,
+        ),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
-        child: Container(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                _buildRow(
-                    'Student Name', 'Enter student name', _nameController),
-                _buildRow(
-                    'Student ID', 'Enter student ID', _studentIdController),
-                _buildRow('Topic', 'Enter topic', _topicController),
-                _buildRow('Complaint', 'Enter complaint', _complaintController),
-                SizedBox(height: 20),
-                Row(
-                  children: [
-                    Text('Attach Video/Image:'),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          // Implement logic to attach video/image
-                        },
-                        style: ElevatedButton.styleFrom(primary: Colors.green),
-                        child: Text('Browse'),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-               
-                SizedBox(height: 60),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                   
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              
+              
+              SizedBox(
+                height: 30,
+              ),
 
-                  
+              Container(
+                child: Column(
+                  children: [
+                    //Start email
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Student Name',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                     Container(
-                      width: 120,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: _submitForm,
-                        style: ElevatedButton.styleFrom(primary: Colors.blue),
-                        child: Text('Post',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                  hintText: 'Enters your Name',
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //End of email
+                    //Start Password
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            'Student ID',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: TextField(
+                                readOnly: false,
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  filled: true,
+                                  fillColor: Colors.black12,
+                                  hintText: 'Enters your Student ID',
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //End Password
+                   SizedBox(
+                    height: 20,
+                   ),
+                    Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 10,
+                          bottom: 5,
+                        ),
+                        child: Text(
+                          'Topics',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  Container(
+                    width: MediaQuery.sizeOf(context).width,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: TextField(
+                              readOnly: false,
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                filled: true,
+                                fillColor: Colors.black12,
+                                hintText: 'Enters your Topic',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                   SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 10,
+                          bottom: 5,
+                        ),
+                        child: Text(
+                          'Complains',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  Container(
+                    width: MediaQuery.sizeOf(context).width,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: TextField(
+                              readOnly: false,
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                filled: true,
+                                fillColor: Colors.black12,
+                                hintText: 'Enters your Complains',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+
+                  //End Password
+                 
+                    //Start sign in button
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(25),
+                      child: MaterialButton(
+                        onPressed: () { // Call loginUser here
+                        },
+                        child: Text(
+                          'Submit',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        color: Color.fromARGB(255, 77, 88, 97),
+                        textColor: Colors.white,
+                        minWidth: 150,
+                        height: 50,
+                      ),
+                    ),
+                    //End sign in button
+
+                    SizedBox(
+                      height: 30,
+                    ),
+
+                    
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
-      ),
+      
     );
   }
 

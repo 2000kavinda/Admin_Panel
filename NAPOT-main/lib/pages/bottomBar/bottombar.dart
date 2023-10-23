@@ -38,14 +38,14 @@ class _BottomBarState extends State<BottomBar> {
     return Scaffold(
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
-        color: Colors.blueAccent,
+        color: Color.fromARGB(255, 255, 255, 255),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
           child: GNav(
-            backgroundColor: Colors.blueAccent,
-            color: Colors.white,
+            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+            color: Color.fromARGB(255, 77, 88, 97),
             activeColor: Colors.white,
-            tabBackgroundColor: Colors.blue.shade800,
+            tabBackgroundColor: Color.fromARGB(255, 77, 88, 97),
             gap: 8,
             padding: EdgeInsets.all(10),
             tabs: [

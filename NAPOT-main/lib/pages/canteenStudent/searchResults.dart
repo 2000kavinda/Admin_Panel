@@ -119,9 +119,23 @@ class _SearchResultsState extends State<SearchResults> {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-      title: Text('Searched Items'),
-      centerTitle: true,
-    ),
+        title: Text(
+          'Search results',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
+          color: Colors.black54,
+        ),
+        backgroundColor: Colors.white,
+        elevation: 3,
+        bottomOpacity: 0.0,
+      ),
     body: Column(
       children: [
         SizedBox(
@@ -341,7 +355,7 @@ class _SearchResultsState extends State<SearchResults> {
                                                                                       Container(
                                                                                         width: MediaQuery.sizeOf(context).width,
                                                                                         height: 40,
-                                                                                        color: Colors.blueAccent,
+                                                                                        color: Color.fromARGB(255, 77, 88, 97),
                                                                                         child: Column(
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                           children: [

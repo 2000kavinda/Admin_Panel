@@ -62,17 +62,22 @@ class _addItemState extends State<addItem> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            'Add a new item',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            'Add new item',
+            style:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
           ),
           centerTitle: true,
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
             icon: Icon(Icons.arrow_back_ios),
             iconSize: 25,
+            color: Colors.black54,
           ),
+          backgroundColor: Colors.white,
+          elevation: 3,
+          bottomOpacity: 0.0,
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -290,7 +295,7 @@ class _addItemState extends State<addItem> {
                                       selectImage();
                                     },
                                     child: Text('Browse'),
-                                    color: Colors.green,
+                                    color: Color.fromARGB(255, 77, 88, 97),
                                     textColor: Colors.white,
                                     minWidth: 100,
                                     height: 40,
@@ -369,7 +374,7 @@ class _addItemState extends State<addItem> {
                                   fontWeight: FontWeight.bold,
                                 ),
                                 ),
-                                color: Colors.blue,
+                                color: Color.fromARGB(255, 77, 88, 97),
                                 textColor: Colors.white,
                                 minWidth: 100,
                                 height: 40,
@@ -403,7 +408,7 @@ class _addItemState extends State<addItem> {
                                   fontWeight: FontWeight.bold,
                                 ),
                                 ),
-                                color: Colors.blue,
+                                color: Color.fromARGB(255, 77, 88, 97),
                                 textColor: Colors.white,
                                 minWidth: 100,
                                 height: 40,

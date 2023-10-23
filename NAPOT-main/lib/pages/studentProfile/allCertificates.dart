@@ -43,10 +43,20 @@ class _AllCertificatesState extends State<AllCertificates> {
       appBar: AppBar(
         title: Text(
           'Certificates',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
+          color: Colors.black54,
+        ),
+        backgroundColor: Colors.white,
+        elevation: 3,
+        bottomOpacity: 0.0,
       ),
       body: Column(
         children: [
@@ -101,7 +111,7 @@ class _AllCertificatesState extends State<AllCertificates> {
                               Container(
                                 width: MediaQuery.sizeOf(context).width,
                                 height: 50,
-                                color: Colors.blueAccent,
+                                color: Color.fromARGB(255, 77, 88, 97),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -155,7 +165,7 @@ class _AllCertificatesState extends State<AllCertificates> {
                                                                         .width,
                                                                     height: 50,
                                                                     color: Colors
-                                                                        .blueAccent,
+                                                                        .white,
                                                                     child: Row(
                                                                       children: [
                                                                         Container(
@@ -172,7 +182,7 @@ class _AllCertificatesState extends State<AllCertificates> {
                                                                             iconSize:
                                                                                 25,
                                                                             color:
-                                                                                Colors.white,
+                                                                                Colors.black54,
                                                                           ),
                                                                         ),
                                                                         Container(
@@ -192,7 +202,7 @@ class _AllCertificatesState extends State<AllCertificates> {
                                                                                     style: TextStyle(
                                                                                       fontSize: 18,
                                                                                       fontWeight: FontWeight.bold,
-                                                                                      color: Colors.white,
+                                                                                      color: Colors.black54,
                                                                                     ),
                                                                                   ),
                                                                                 ],
@@ -348,7 +358,7 @@ class _AllCertificatesState extends State<AllCertificates> {
                                                                                 });
                                                                               },
                                                                               child: Text('Delete'),
-                                                                              color: Colors.red,
+                                                                              color: Color.fromARGB(255, 77, 88, 97),
                                                                               textColor: Colors.white,
                                                                               minWidth: 100,
                                                                               height: 40,
@@ -368,7 +378,7 @@ class _AllCertificatesState extends State<AllCertificates> {
                                                                                 _updateData(docId);
                                                                               },
                                                                               child: Text('Update'),
-                                                                              color: Colors.blue,
+                                                                              color: Color.fromARGB(255, 77, 88, 97),
                                                                               textColor: Colors.white,
                                                                               minWidth: 100,
                                                                               height: 40,

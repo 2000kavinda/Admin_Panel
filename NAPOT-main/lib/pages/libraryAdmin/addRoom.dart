@@ -41,19 +41,22 @@ class _AddRoomState extends State<AddRoom> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            'Add New Room',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            'Add new room',
+            style:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
           ),
           centerTitle: true,
           leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.of(context).pop();
             },
             icon: Icon(Icons.arrow_back_ios),
             iconSize: 25,
+            color: Colors.black54,
           ),
+          backgroundColor: Colors.white,
+          elevation: 3,
+          bottomOpacity: 0.0,
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -173,7 +176,7 @@ class _AddRoomState extends State<AddRoom> {
                                 fontWeight: FontWeight.bold,
                               ),
                               ),
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 77, 88, 97),
                               textColor: Colors.white,
                               minWidth: 100,
                               height: 40,
@@ -203,7 +206,7 @@ class _AddRoomState extends State<AddRoom> {
                                 fontWeight: FontWeight.bold
                               ),
                               ),
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 77, 88, 97),
                               textColor: Colors.white,
                               minWidth: 100,
                               height: 40,

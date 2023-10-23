@@ -46,21 +46,29 @@ class TabBarDemo extends StatelessWidget {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios_rounded),
-              onPressed: () {
-                // Add your menu button's onPressed logic here
-              },
+            title: Text(
+              'Facilities',
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
             ),
-            title: const Text('Facilities'),
             centerTitle: true,
-            backgroundColor: Color.fromARGB(255, 64, 156, 255),
+            leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.arrow_back_ios),
+              iconSize: 25,
+              color: Colors.black54,
+            ),
+            backgroundColor: Colors.white,
+            elevation: 3,
+            bottomOpacity: 0.0,
           ),
           body: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 1, // 2 columns
               crossAxisSpacing: 1.0, // Horizontal spacing
-              mainAxisSpacing: 8.0,
+              mainAxisSpacing: 2.0,
               // Vertical spacing
             ),
 
@@ -74,45 +82,7 @@ class TabBarDemo extends StatelessWidget {
               );
             },
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.blue,
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            items: [
-              BottomNavigationBarItem(
-                label: 'home',
-                icon: Icon(
-                  Icons.home,
-                  size: 35,
-                ),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.notifications,
-                  size: 35,
-                ),
-                label: 'bell',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.person,
-                  size: 35,
-                ),
-                label: 'Profile',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.grid_view_rounded,
-                  size: 35,
-                ),
-                label: 'grid',
-              ),
-              // Add more BottomNavigationBarItems for other tabs
-            ],
-          ),
+          
         ),
       ),
     );
@@ -134,7 +104,7 @@ class RoundedGridCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 0, 136, 248), // Blue background color
+      color: Color.fromARGB(255, 77, 88, 97), // Blue background color
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0), // Rounded corners
       ),
@@ -147,7 +117,7 @@ class RoundedGridCard extends StatelessWidget {
           Image.asset(
             imagePath,
             width: double.infinity, // Width of the image
-            height: 142,
+            height: 140,
             fit: BoxFit.fitWidth, // Height of the image
           ),
           Padding(
@@ -155,8 +125,8 @@ class RoundedGridCard extends StatelessWidget {
             child: Text(
               title,
               style: TextStyle(
-                fontSize: 20, // Adjust font size as needed
-                fontWeight: FontWeight.bold, // Add any desired styling
+                fontSize: 16, // Adjust font size as needed
+                fontWeight: FontWeight.w500, // Add any desired styling
                 color: Colors.white, // Text color
               ),
             ),
@@ -171,8 +141,8 @@ class RoundedGridCard extends StatelessWidget {
             child: Text(
               text,
               style: TextStyle(
-                fontSize: 16, // Adjust font size as needed
-                fontWeight: FontWeight.bold, // Add any desired styling
+                fontSize: 14, // Adjust font size as needed
+                fontWeight: FontWeight.w500, // Add any desired styling
                 color: Colors.white, // Text color
               ),
             ),

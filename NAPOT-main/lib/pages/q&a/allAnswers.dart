@@ -28,12 +28,22 @@ class _AllAnswersState extends State<AllAnswers> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('All Answers',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
+        title: Text(
+          'All Answers',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
         ),
         centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
+          color: Colors.black54,
+        ),
+        backgroundColor: Colors.white,
+        elevation: 3,
+        bottomOpacity: 0.0,
       ),
       body: Column(
         children: [
@@ -88,7 +98,7 @@ class _AllAnswersState extends State<AllAnswers> {
                                       
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        color: Colors.blueAccent,
+                                        color: Colors.black12,
                                       ),
                                       
                                       child: Padding(
@@ -101,7 +111,7 @@ class _AllAnswersState extends State<AllAnswers> {
                                             style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
-                                              color: Colors.white,
+                                              color: Colors.black54,
                                             ),
                                           ),
                                         ),

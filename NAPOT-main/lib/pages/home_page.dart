@@ -39,49 +39,49 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'NAPOT',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context) .pop();
-          },
-          icon: Icon(Icons.arrow_back_ios),
-          iconSize: 25,
-        ),
-        backgroundColor: Colors.blueAccent,
-      ),
+      
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(
-              height: 10,
+              height: 40,
             ),
-            // Row(
-            //   children: [
-            //     Padding(
-            //       padding: const EdgeInsets.only(top: 10,left: 10),
-            //       child: Text('NAPOT Mobile',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w500,color: Colors.black54),),
-            //     ),
-            //   ],
-            // ),
-            // Row(
-            //   children: [
-            //     Padding(
-            //       padding: const EdgeInsets.only(left: 10,bottom: 10),
-            //       child: Text(
-            //         'NSBM Green University',
-            //         style: TextStyle(
-            //             fontSize: 14,
-            //             fontWeight: FontWeight.w500,
-            //             color: Colors.black54),
-            //       ),
-            //     ),
-            //   ],
-            // ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    'Welcome back',
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black54),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text('NAPOT Mobile',style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold,color: Colors.black54),),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10,bottom: 10),
+                  child: Text(
+                    'NSBM Green University',
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black54),
+                  ),
+                ),
+              ],
+            ),
             Stack(
               children: [
                 InkWell(
@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                             height: 56,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 3, 50, 88),
                             ),
                             child: Image.asset(
                               'assets/icons/degreeIcon.png', // Replace with the actual path to your PNG image
@@ -223,7 +223,7 @@ class _HomePageState extends State<HomePage> {
                             height: 56,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 3, 50, 88),
                             ),
                             child: Image.asset(
                               'assets/icons/postGraduates.png', // Replace with the actual path to your PNG image
@@ -263,7 +263,7 @@ class _HomePageState extends State<HomePage> {
                             height: 56,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 3, 50, 88),
                             ),
                             child: Image.asset(
                               'assets/icons/facilities.png', // Replace with the actual path to your PNG image
@@ -309,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                             height: 56,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 3, 50, 88),
                             ),
                             child: Image.asset(
                               'assets/icons/virtualTour.png', // Replace with the actual path to your PNG image
@@ -339,11 +339,11 @@ class _HomePageState extends State<HomePage> {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10,bottom: 5),
                     child: Text(
                       'Latset news',
                       style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.black54),
                     ),
                   ),
                 ),
@@ -527,6 +527,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 10,
+            ),
             Column(
               children: [
                 Row(
@@ -536,7 +539,7 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         'Affiliated Universities',
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 20, fontWeight: FontWeight.bold,color: Colors.black54),
                       ),
                     ),
                   ],
@@ -564,7 +567,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             //Plymouth University bar
 
@@ -574,13 +577,13 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width * 0.2,
                   height: 75,
-                  color: Colors.grey,
+                  color: const Color.fromARGB(255, 255, 255, 255),
                   child: Image.asset('assets/images/plyBatch.png'),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.8,
                   height: 75,
-                  color: Colors.blueAccent,
+                  color: const Color.fromARGB(255, 77, 88, 97),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, top: 12),
                     child: Text(
@@ -634,13 +637,13 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width * 0.2,
                   height: 75,
-                  color: Colors.grey,
+                  color: Colors.white,
                   child: Image.asset('assets/images/victoriaLogo.png'),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.8,
                   height: 75,
-                  color: Colors.blueAccent,
+                  color: const Color.fromARGB(255, 77, 88, 97),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, top: 12),
                     child: Text(
@@ -683,7 +686,7 @@ class _HomePageState extends State<HomePage> {
             //University details End
 
             SizedBox(
-              height: 20,
+              height: 30,
             ),
 
             //About Courses Section Start
@@ -694,7 +697,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.only(left: 10),
                   child: Text(
                     'About Courses',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.black54),
                   ),
                 ),
               ],
@@ -735,7 +738,7 @@ class _HomePageState extends State<HomePage> {
                             }
                           },
               style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
+                primary: Color.fromARGB(255, 77, 88, 97),
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -789,7 +792,7 @@ class _HomePageState extends State<HomePage> {
                             }
                           },
               style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
+                primary: Color.fromARGB(255, 77, 88, 97),
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -843,7 +846,7 @@ class _HomePageState extends State<HomePage> {
                             }
                           },
               style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
+                primary: Color.fromARGB(255, 77, 88, 97),
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -890,7 +893,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text('Beauty of NSBM',
                     style: TextStyle(
                       fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.bold,color: Colors.black54,
                     ),
                   ),
                 ),

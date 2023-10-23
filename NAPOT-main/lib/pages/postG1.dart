@@ -43,27 +43,24 @@ class _TabBarDemo1State extends State<TabBarDemo1> {
       home: DefaultTabController(
         length: 4,
         child: Scaffold(
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(55), // Set the height of the AppBar
-            child: AppBar(
-              leading: IconButton(
-                icon: Icon(Icons.menu),
-                onPressed: () {
-                  // Add your menu button's onPressed logic here
-                },
-              ),
-              actions: [
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {
-                    // Add your search button's onPressed logic here
-                  },
-                ),
-              ],
-              title: const Text('Post Graduates'),
-              centerTitle: true,
-              backgroundColor: Color.fromARGB(255, 64, 156, 255),
+          appBar: AppBar(
+            title: Text(
+              'Post Graduate',
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
             ),
+            centerTitle: true,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.arrow_back_ios),
+              iconSize: 25,
+              color: Colors.black54,
+            ),
+            backgroundColor: Colors.white,
+            elevation: 3,
+            bottomOpacity: 0.0,
           ),
           body: Column(
             children: [
@@ -124,7 +121,7 @@ class _TabBarDemo1State extends State<TabBarDemo1> {
                               );
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.green,
+                              primary: Color.fromARGB(255, 77, 88, 97),
                               padding: EdgeInsets.symmetric(
                                 vertical: 12,
                                 horizontal: 24,
@@ -157,45 +154,7 @@ class _TabBarDemo1State extends State<TabBarDemo1> {
               ),
             ],
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.blue,
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            items: [
-              BottomNavigationBarItem(
-                label: 'home',
-                icon: Icon(
-                  Icons.home,
-                  size: 35,
-                ),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.notifications,
-                  size: 35,
-                ),
-                label: 'bell',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.person,
-                  size: 35,
-                ),
-                label: 'Profile',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.grid_view_rounded,
-                  size: 35,
-                ),
-                label: 'grid',
-              ),
-              // Add more BottomNavigationBarItems for other tabs
-            ],
-          ),
+          
         ),
       ),
     );
@@ -206,7 +165,7 @@ class _TabBarDemo1State extends State<TabBarDemo1> {
       margin: EdgeInsets.all(8),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.blue,
+        color: Color.fromARGB(255, 77, 88, 97),
       ),
       child: IconButton(
         icon: Icon(

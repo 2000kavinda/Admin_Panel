@@ -9,7 +9,7 @@ class Message extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Messages',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -18,8 +18,9 @@ class Message extends StatelessWidget {
           },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
+          color: Colors.black54,
         ),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       body: SingleChildScrollView(
         child: Column(

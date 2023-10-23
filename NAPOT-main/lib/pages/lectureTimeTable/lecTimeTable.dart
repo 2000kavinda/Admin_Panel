@@ -17,16 +17,17 @@ class _DemoPageState extends State<LectureTimeTable> {
        appBar: AppBar(
         title: Text(
           'Lecture Time Table',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.black54),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
+          color: Colors.black54,
         ),
       ),
       body: SafeArea(
@@ -58,7 +59,7 @@ class _DemoPageState extends State<LectureTimeTable> {
                             Container(
                               width: MediaQuery.sizeOf(context).width,
                               height: 40,
-                              color: Colors.blueAccent,
+                              color: Color.fromARGB(255, 77, 88, 97),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -80,9 +81,9 @@ class _DemoPageState extends State<LectureTimeTable> {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Text('data',
+                                      Text('Time',
                                       style: TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black87,
                                       ),
@@ -93,7 +94,7 @@ class _DemoPageState extends State<LectureTimeTable> {
                                 Container(
                                   height: 40,
                                   width: MediaQuery.sizeOf(context).width*0.01,
-                                  color: Colors.blueAccent,
+                                  color: Color.fromARGB(255, 77, 88, 97),
                                 ),
                                 Container(
                                   width: MediaQuery.sizeOf(context).width*0.6,
@@ -103,7 +104,7 @@ class _DemoPageState extends State<LectureTimeTable> {
                                     children: [
                                       Text('Lecture',
                                       style: TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black87,
                                       ),
@@ -141,7 +142,7 @@ class _DemoPageState extends State<LectureTimeTable> {
                                 Container(
                                   width: MediaQuery.sizeOf(context).width*0.01,
                                   height: 50,
-                                  color: Colors.blueAccent,
+                                  color: Color.fromARGB(255, 77, 88, 97),
                                 ),
                                 Container(
                                   width: MediaQuery.sizeOf(context).width*0.6,
@@ -156,7 +157,9 @@ class _DemoPageState extends State<LectureTimeTable> {
                                           height: 38,
                                           decoration: BoxDecoration(
                                           borderRadius:BorderRadius.circular(10),
-                                          color: Colors.lightBlue),
+                                          color: Color.fromARGB(
+                                                    255, 28, 112, 131),
+                                              ),
                                           child: Column(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children: [
@@ -203,7 +206,7 @@ class _DemoPageState extends State<LectureTimeTable> {
                                 Container(
                                   width: MediaQuery.sizeOf(context).width*0.01,
                                   height: 50,
-                                  color: Colors.blueAccent,
+                                  color: Color.fromARGB(255, 77, 88, 97),
                                 ),
                                 Container(
                                   width: MediaQuery.sizeOf(context).width*0.6,
@@ -218,7 +221,8 @@ class _DemoPageState extends State<LectureTimeTable> {
                                           height: 38,
                                           decoration: BoxDecoration(
                                           borderRadius:BorderRadius.circular(10),
-                                          color: Colors.green),
+                                          color: Color.fromARGB(255, 107, 135, 141),
+                                              ),
                                           child: Column(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children: [
@@ -265,7 +269,7 @@ class _DemoPageState extends State<LectureTimeTable> {
                                 Container(
                                   width: MediaQuery.sizeOf(context).width*0.01,
                                   height: 50,
-                                  color: Colors.blueAccent,
+                                  color: Color.fromARGB(255, 77, 88, 97),
                                 ),
                                 Container(
                                   width: MediaQuery.sizeOf(context).width*0.6,
@@ -280,7 +284,9 @@ class _DemoPageState extends State<LectureTimeTable> {
                                           height: 38,
                                           decoration: BoxDecoration(
                                           borderRadius:BorderRadius.circular(10),
-                                          color: Colors.lightBlue),
+                                          color: Color.fromARGB(
+                                                    255, 28, 112, 131),
+                                              ),
                                           child: Column(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children: [
@@ -308,7 +314,7 @@ class _DemoPageState extends State<LectureTimeTable> {
                                 Container(
                                   height: 30,
                                   width: MediaQuery.sizeOf(context).width*0.01,
-                                  color: Colors.blueAccent,
+                                  color: Color.fromARGB(255, 77, 88, 97),
                                 ),
                                 Container(
                                   width: MediaQuery.sizeOf(context).width*0.6,

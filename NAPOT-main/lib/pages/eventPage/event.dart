@@ -17,7 +17,7 @@ class _DemoPageState extends State<EventPage> {
       appBar: AppBar(
         title: Text(
           'Calendar & Events',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -26,8 +26,9 @@ class _DemoPageState extends State<EventPage> {
           },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
+          color: Colors.black54,
         ),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -39,7 +40,7 @@ class _DemoPageState extends State<EventPage> {
               Container(
                 width: MediaQuery.sizeOf(context).width,
                 height: 40,
-                color: Colors.blueAccent,
+                color: Color.fromARGB(255, 35, 71, 79),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -88,7 +89,7 @@ class _DemoPageState extends State<EventPage> {
                     if (snapshots.connectionState == ConnectionState.waiting) {
                       return Center(
                         child: CircularProgressIndicator(
-                          color: Colors.green,
+                        color: Color.fromARGB(255, 35, 71, 79),
                         ),
                       );
                     }
@@ -148,7 +149,7 @@ class _DemoPageState extends State<EventPage> {
                                       Container(
                                         width: MediaQuery.sizeOf(context).width *0.01,
                                         height: 110,
-                                        color: Colors.blueAccent,
+                                        color: Color.fromARGB(255, 35, 71, 79),
                                       ),
                                       Container(
                                         width: MediaQuery.sizeOf(context).width *0.74,
@@ -187,7 +188,8 @@ class _DemoPageState extends State<EventPage> {
                                                 decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(10),
-                                                    color: Colors.green),
+                                                    color: Color.fromARGB(255, 40, 122, 140),
+                                                ),
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [

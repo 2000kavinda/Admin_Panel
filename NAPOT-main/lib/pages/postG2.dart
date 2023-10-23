@@ -20,39 +20,23 @@ class TabBarDemo2 extends StatelessWidget {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(Icons.menu), // Menu icon
-              onPressed: () {
-                // Add your menu button's onPressed logic here
-              },
+            title: Text(
+              'Post graduates',
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
             ),
-
-
-            actions: [
-              IconButton(
-                icon: Icon(Icons.search), // Search icon
-                onPressed: () {
-                  // Add your search button's onPressed logic here
-                },
-              ),
-            ],
-
-
-
-
-
-
-            bottom: const TabBar(
-              tabs: [
-                Tab(text: ('Achievements')),
-                Tab(text: ('Courses')),
-                Tab(text: ('Intakes')),
-                Tab(text: ('Contact Us')),
-              ],
-            ),
-            title: const Text('Post Graduates Success Stories'),
             centerTitle: true,
-            backgroundColor: Color.fromARGB(255, 64, 156, 255),
+            leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.arrow_back_ios),
+              iconSize: 25,
+              color: Colors.black54,
+            ),
+            backgroundColor: Colors.white,
+            elevation: 3,
+            bottomOpacity: 0.0,
           ),
 
           body:GridView.count(
@@ -142,7 +126,8 @@ class TabBarDemo2 extends StatelessWidget {
                             // Add button click logic here
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.green, // Background color of the button
+                            primary: Color.fromARGB(
+                            255, 77, 88, 97), // Background color of the button
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100), // Circular border radius of 100
                             ),
@@ -238,7 +223,8 @@ class TabBarDemo2 extends StatelessWidget {
                             // Add button click logic here
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.green, // Background color of the button
+                            primary: Color.fromARGB(
+                            255, 77, 88, 97), // Background color of the button
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100), // Circular border radius of 100
                             ),
@@ -334,7 +320,8 @@ class TabBarDemo2 extends StatelessWidget {
                             // Add button click logic here
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.green, // Background color of the button
+                           primary: Color.fromARGB(
+                            255, 77, 88, 97), // Background color of the button
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100), // Circular border radius of 100
                             ),
@@ -430,7 +417,8 @@ class TabBarDemo2 extends StatelessWidget {
                             // Add button click logic here
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.green, // Background color of the button
+                            primary: Color.fromARGB(
+                            255, 77, 88, 97),  // Background color of the button
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100), // Circular border radius of 100
                             ),
@@ -526,7 +514,8 @@ class TabBarDemo2 extends StatelessWidget {
                             // Add button click logic here
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.green, // Background color of the button
+                            primary: Color.fromARGB(
+                            255, 77, 88, 97), // Background color of the button
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100), // Circular border radius of 100
                             ),
@@ -621,7 +610,8 @@ class TabBarDemo2 extends StatelessWidget {
                             // Add button click logic here
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.green, // Background color of the button
+                            primary: Color.fromARGB(
+                            255, 77, 88, 97),  // Background color of the button
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100), // Circular border radius of 100
                             ),
@@ -716,7 +706,8 @@ class TabBarDemo2 extends StatelessWidget {
                             // Add button click logic here
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.green, // Background color of the button
+                            primary: Color.fromARGB(
+                            255, 77, 88, 97),  // Background color of the button
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100), // Circular border radius of 100
                             ),
@@ -748,7 +739,8 @@ class TabBarDemo2 extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: Colors.lightBlue, // Light blue border color
+                                color: Color.fromARGB(
+                                255, 77, 88, 97),  // Light blue border color
                                 width: 2, // 2px border width
                               ),
                             ),
@@ -811,7 +803,7 @@ class TabBarDemo2 extends StatelessWidget {
                             // Add button click logic here
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.green, // Background color of the button
+                            primary: Color.fromARGB(255, 77, 88, 97), // Background color of the button
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(100), // Circular border radius of 100
                             ),
@@ -833,47 +825,7 @@ class TabBarDemo2 extends StatelessWidget {
               ]
           ),
 
-          bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.blue,
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white,
-            showSelectedLabels: false, // Hide labels
-            showUnselectedLabels: false, // Hide labels
-
-            items:  [
-              BottomNavigationBarItem(
-                label: ('home'),// Adjust the scale factor as needed
-                icon: Icon(Icons.home,
-                    size: 35),
-
-
-              ),
-
-              BottomNavigationBarItem(
-                icon: Icon(Icons.notifications,
-                    size: 35),
-                label: 'bell',
-              ),
-
-
-
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person,
-                    size: 35),
-                label: 'Profile',
-              ),
-
-
-
-              BottomNavigationBarItem(
-                icon: Icon(Icons.grid_view_rounded,
-                    size: 35),
-                label: 'grid',
-              ),
-              // Add more BottomNavigationBarItems for other tabs
-            ],
-          ),
+          
 
           floatingActionButton: FloatingActionButton(
             onPressed: () {},

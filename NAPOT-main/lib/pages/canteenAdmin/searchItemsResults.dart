@@ -46,13 +46,22 @@ class _searchItemsResultsState extends State<searchItemsResults> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Searched Canteen Items',
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
+        title: Text(
+          'Search Result',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
         ),
         centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
+          color: Colors.black54,
+        ),
+        backgroundColor: Colors.white,
+        elevation: 3,
+        bottomOpacity: 0.0,
       ),
       body: Column(
         children: [
@@ -218,7 +227,7 @@ class _searchItemsResultsState extends State<searchItemsResults> {
                                                                               Row(
                                                                                 children: [
                                                                                   Container(
-                                                                                    color: Colors.blueAccent,
+                                                                                    color: Colors.white,
                                                                                     width: MediaQuery.sizeOf(context).width*0.2,
                                                                                     height: 55,
                                                                                     child: InkWell(
@@ -226,7 +235,7 @@ class _searchItemsResultsState extends State<searchItemsResults> {
                                                                                         Navigator.of(context).pop();
                                                                                       },
                                                                                       child: Icon(Icons.arrow_back_ios,
-                                                                                      color: Colors.white,
+                                                                                      color: Colors.black54,
                                                                                       size: 30,
                                                                                       ),
                                                                                     ),
@@ -234,7 +243,7 @@ class _searchItemsResultsState extends State<searchItemsResults> {
                                                                                   Container(
                                                                                     width: MediaQuery.sizeOf(context).width*0.8,
                                                                                     height: 55,
-                                                                                    color: Colors.blueAccent,
+                                                                                    color: Colors.white,
                                                                                     child: Column(
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
                                                                                       children: [
@@ -244,7 +253,7 @@ class _searchItemsResultsState extends State<searchItemsResults> {
                                                                                             style: TextStyle(
                                                                                               fontSize: 18,
                                                                                               fontWeight: FontWeight.bold,
-                                                                                              color: Colors.white,
+                                                                                              color: Colors.black54,
                                                                                             ),
                                                                                             ),
                                                                                           ],
@@ -454,7 +463,7 @@ class _searchItemsResultsState extends State<searchItemsResults> {
                                                                                               });
                                                                                             },
                                                                                             child: Text('Delete'),
-                                                                                            color: Colors.red,
+                                                                                            color: Color.fromARGB(255, 77, 88, 97),
                                                                                             textColor: Colors.white,
                                                                                             minWidth: 100,
                                                                                             height: 40,
@@ -472,7 +481,7 @@ class _searchItemsResultsState extends State<searchItemsResults> {
                                                                                               _updateData(docId);
                                                                                             },
                                                                                             child: Text('Update'),
-                                                                                            color: Colors.blueAccent,
+                                                                                            color: Color.fromARGB(255, 77, 88, 97),
                                                                                             textColor: Colors.white,
                                                                                             minWidth: 100,
                                                                                             height: 40,
@@ -511,8 +520,12 @@ class _searchItemsResultsState extends State<searchItemsResults> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                              color: Colors
-                                                                  .blueAccent,
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      77,
+                                                                      88,
+                                                                      97),
                                                               textColor:
                                                                   Colors.white,
                                                             ),

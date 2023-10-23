@@ -60,7 +60,7 @@ class _StMenuState extends State<StMenu> {
                   },
                   child: Ink(
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 57, 117, 222),
+                      color: Color.fromARGB(255, 8, 133, 161),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     width: MediaQuery.sizeOf(context).width * 0.48,
@@ -115,7 +115,7 @@ class _StMenuState extends State<StMenu> {
                   },
                   child: Ink(
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 25, 52, 97),
+                      color: Color.fromARGB(255, 4, 61, 74),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     width: MediaQuery.sizeOf(context).width * 0.48,
@@ -183,7 +183,7 @@ class _StMenuState extends State<StMenu> {
                       },
                       child: Ink(
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 44, 80, 141),
+                          color: Color.fromARGB(255, 4, 61, 74),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         width: MediaQuery.sizeOf(context).width * 0.32,
@@ -250,7 +250,7 @@ class _StMenuState extends State<StMenu> {
                           },
                           child: Ink(
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 114, 157, 232),
+                              color: Color.fromARGB(255, 8, 133, 161),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             width: MediaQuery.sizeOf(context).width * 0.64,
@@ -311,7 +311,7 @@ class _StMenuState extends State<StMenu> {
                               },
                               child: Ink(
                                 decoration: BoxDecoration(
-                                  color: const Color.fromARGB(255, 9, 79, 200),
+                                  color: Color.fromARGB(255, 18, 102, 121),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 width: MediaQuery.sizeOf(context).width * 0.31,
@@ -372,7 +372,7 @@ class _StMenuState extends State<StMenu> {
                               },
                               child: Ink(
                                 decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 81, 109, 157),
+                                  color: Color.fromARGB(255, 4, 61, 74),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 width: MediaQuery.sizeOf(context).width * 0.31,
@@ -456,7 +456,7 @@ class _StMenuState extends State<StMenu> {
                               },
                               child: Ink(
                                 decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 63, 128, 242),
+                                  color: Color.fromARGB(255, 8, 133, 161),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 width: MediaQuery.sizeOf(context).width * 0.32,
@@ -510,7 +510,7 @@ class _StMenuState extends State<StMenu> {
                               },
                               child: Ink(
                                 decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 35, 83, 165),
+                                  color: Color.fromARGB(255, 4, 61, 74),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 width: MediaQuery.sizeOf(context).width * 0.32,
@@ -568,7 +568,7 @@ class _StMenuState extends State<StMenu> {
                               },
                               child: Ink(
                                 decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 99, 134, 194),
+                                  color: Color.fromARGB(255, 57, 87, 94),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 width: MediaQuery.sizeOf(context).width * 0.66,
@@ -635,7 +635,7 @@ class _StMenuState extends State<StMenu> {
                           },
                           child: Ink(
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 43, 95, 185),
+                               color: Color.fromARGB(255, 28, 112, 131),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             width: MediaQuery.sizeOf(context).width * 0.30,
@@ -713,7 +713,7 @@ class _StMenuState extends State<StMenu> {
                           },
                           child: Ink(
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 9, 93, 238),
+                               color: Color.fromARGB(255, 28, 112, 131),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             width: MediaQuery.sizeOf(context).width * 0.32,
@@ -771,7 +771,7 @@ class _StMenuState extends State<StMenu> {
                           },
                           child: Ink(
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 50, 88, 154),
+                              color: Color.fromARGB(255, 4, 61, 74),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             width: MediaQuery.sizeOf(context).width * 0.32,
@@ -841,7 +841,7 @@ class _StMenuState extends State<StMenu> {
                           },
                           child: Ink(
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 49, 96, 177),
+                              color: Color.fromARGB(255, 52, 93, 103),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             width: MediaQuery.sizeOf(context).width * 0.3125,
@@ -896,7 +896,7 @@ class _StMenuState extends State<StMenu> {
                           },
                           child: Ink(
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 22, 99, 232),
+                              color: Color.fromARGB(255, 4, 61, 74),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             width: MediaQuery.sizeOf(context).width * 0.3125,
@@ -955,7 +955,7 @@ class _StMenuState extends State<StMenu> {
                           },
                           child: Ink(
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 101, 145, 221),
+                              color: Color.fromARGB(255, 28, 112, 131),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             width: MediaQuery.sizeOf(context).width * 0.64,

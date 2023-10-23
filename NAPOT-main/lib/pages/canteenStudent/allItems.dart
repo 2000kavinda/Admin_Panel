@@ -130,16 +130,55 @@ class _CanteenItemsState extends State<allItems> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Canteen Food Items'),
+        title: Text(
+          'Canteen',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
+        ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
+          color: Colors.black54,
         ),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       body: Column(
         children: [
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Row(
+              children: [
+                Text('Place Your Order',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black54,
+                ),),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10,bottom: 20),
+            child: Row(
+              children: [
+                Text(
+                  'Fresh Foods',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black54,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
           //Start Search Bar
           Padding(
             padding: const EdgeInsets.only(top: 15, bottom: 10),
@@ -196,7 +235,8 @@ class _CanteenItemsState extends State<allItems> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            color: Colors.blueAccent,
+                            color: Color.fromARGB(255, 2, 93, 49),
+                            
                             textColor: Colors.white,
                           ),
                         ),
@@ -212,7 +252,7 @@ class _CanteenItemsState extends State<allItems> {
           Container(
             width: MediaQuery.sizeOf(context).width,
             height: 40,
-            color: Colors.blueAccent,
+            color: Color.fromARGB(255, 77, 88, 97),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -1233,8 +1273,7 @@ class _CanteenItemsState extends State<allItems> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                              color: Colors
-                                                                  .blueAccent,
+                                                              color: Color.fromARGB(255, 2, 93, 49),
                                                               textColor:
                                                                   Colors.white,
                                                             ),
@@ -1273,7 +1312,7 @@ class _CanteenItemsState extends State<allItems> {
           Container(
             width: MediaQuery.sizeOf(context).width,
             height: 40,
-            color: Colors.blueAccent,
+            color: Color.fromARGB(255, 77, 88, 97),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -2296,8 +2335,12 @@ class _CanteenItemsState extends State<allItems> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                              color: Colors
-                                                                  .blueAccent,
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      2,
+                                                                      93,
+                                                                      49),
                                                               textColor:
                                                                   Colors.white,
                                                             ),

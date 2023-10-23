@@ -43,11 +43,20 @@ class _AllBadgesState extends State<AllBadges> {
       appBar: AppBar(
         title: Text(
           'Badges',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
         ),
         centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 25,
+          color: Colors.black54,
+        ),
+        backgroundColor: Colors.white,
+        elevation: 3,
+        bottomOpacity: 0.0,
       ),
       body: Column(
         children: [
@@ -213,7 +222,7 @@ class _AllBadgesState extends State<AllBadges> {
                                                                 .width,
                                                             height: 50,
                                                             color: Colors
-                                                                .blueAccent,
+                                                                .white,
                                                             child: Row(
                                                               children: [
                                                                 Container(
@@ -232,7 +241,7 @@ class _AllBadgesState extends State<AllBadges> {
                                                                     iconSize:
                                                                         25,
                                                                     color: Colors
-                                                                        .white,
+                                                                        .black54,
                                                                   ),
                                                                 ),
                                                                 Container(
@@ -256,7 +265,7 @@ class _AllBadgesState extends State<AllBadges> {
                                                                                   FontWeight
                                                                                       .bold,
                                                                               color: Colors
-                                                                                  .white,
+                                                                                  .black54,
                                                                             ),
                                                                           ),
                                                                         ],
@@ -443,8 +452,11 @@ class _AllBadgesState extends State<AllBadges> {
                                                                       },
                                                                       child: Text(
                                                                           'Delete'),
-                                                                      color: Colors
-                                                                          .red,
+                                                                      color: Color.fromARGB(
+                                                                          255,
+                                                                          77,
+                                                                          88,
+                                                                          97),
                                                                       textColor:
                                                                           Colors
                                                                               .white,
@@ -472,8 +484,11 @@ class _AllBadgesState extends State<AllBadges> {
                                                                       },
                                                                       child: Text(
                                                                           'Update'),
-                                                                      color: Colors
-                                                                          .blue,
+                                                                      color: Color.fromARGB(
+                                                                          255,
+                                                                          77,
+                                                                          88,
+                                                                          97),
                                                                       textColor:
                                                                           Colors
                                                                               .white,

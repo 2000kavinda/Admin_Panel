@@ -32,17 +32,21 @@ class _libraryRoomsState extends State<libraryRooms> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Library Rooms Options',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          'Library rooms option',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
         ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
+          color: Colors.black54,
         ),
+        backgroundColor: Colors.white,
+        elevation: 3,
+        bottomOpacity: 0.0,
       ),
       body: Column(
         children: [
@@ -91,389 +95,368 @@ class _libraryRoomsState extends State<libraryRooms> {
 
                     return Column(
                       children: [
-                        //Start Room Details
-                        Container(
-                          width: MediaQuery.sizeOf(context).width * 0.95,
-                          height: 100,
-                          color: Colors.black12,
-                          child: Column(
-                            children: [
-                              Container(
-                                width: MediaQuery.sizeOf(context).width * 0.95,
-                                height: 40,
-                                color: Colors.blueAccent,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Room Number ',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
+
+                         InkWell(
+                          onTap: () {
+                            roomNoController.text = doc['roomNo'];
+                            countController.text = doc['count'];
+
+                            showDialog(
+                              context: context,
+                              builder: (context) => FullScreenDialog(
+                                content: Container(
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: MediaQuery.sizeOf(context).width,
+                                        height: 50,
                                         color: Colors.white,
-                                      ),
-                                    ),
-                                    Text(
-                                      doc['roomNo'],
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          0.475,
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 10),
                                         child: Row(
                                           children: [
-                                            Text(
-                                              'Student Capacity : ',
-                                              style: TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w500,
+                                            Container(
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  0.2,
+                                              height: 50,
+                                              child: Row(
+                                                children: [
+                                                  IconButton(
+                                                     onPressed: () {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                    icon: Icon(
+                                                        Icons.arrow_back_ios),
+                                                    iconSize: 25,
+                                                    color: Colors.black54,
+                                                  ),
+                                                ],
                                               ),
                                             ),
-                                            Text(
-                                              doc['count'],
-                                              style: TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w500,
+                                            Container(
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  0.8,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Text(
+                                                        'Room Details Options',
+                                                        style: TextStyle(
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Colors.black54,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
                                               ),
                                             ),
                                           ],
                                         ),
                                       ),
-                                    ),
-                                    Container(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          0.475,
-                                      child: Column(
-                                        children: [
-                                          MaterialButton(
-                                            onPressed: () {
-                                              roomNoController.text =
-                                                  doc['roomNo'];
-                                              countController.text =
-                                                  doc['count'];
+                                      SizedBox(
+                                        height: 30,
+                                      ),
+                                      Container(
+                                        child: Column(
+                                          children: [
+                                            //Start Room number
+                                            Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                    left: 10,
+                                                    bottom: 5,
+                                                  ),
+                                                  child: Text(
+                                                    'Room Number',
+                                                    style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Container(
+                                              width: MediaQuery.sizeOf(context)
+                                                  .width,
+                                              child: Column(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 10,
+                                                            right: 10),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              20.0),
+                                                      child: TextField(
+                                                        controller:
+                                                            roomNoController,
+                                                        keyboardType:
+                                                            TextInputType.text,
+                                                        decoration:
+                                                            const InputDecoration(
+                                                          border:
+                                                              InputBorder.none,
+                                                          filled: true,
+                                                          fillColor:
+                                                              Colors.black12,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            //End Room number
 
-                                              showDialog(
-                                                context: context,
-                                                builder: (context) =>
-                                                    FullScreenDialog(
-                                                  content: Container(
+                                            //Start Capacity
+                                            Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                    left: 10,
+                                                    bottom: 5,
+                                                  ),
+                                                  child: Text(
+                                                    'Capacity',
+                                                    style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Container(
+                                              width: MediaQuery.sizeOf(context)
+                                                  .width,
+                                              child: Column(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 10,
+                                                            right: 10),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              20.0),
+                                                      child: TextField(
+                                                        controller:
+                                                            countController,
+                                                        keyboardType:
+                                                            TextInputType
+                                                                .number,
+                                                        decoration:
+                                                            const InputDecoration(
+                                                          border:
+                                                              InputBorder.none,
+                                                          filled: true,
+                                                          fillColor:
+                                                              Colors.black12,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            //End Capacity
+
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+
+                                            //Start buttons
+                                            Container(
+                                              child: Row(
+                                                children: [
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        0.5,
                                                     child: Column(
                                                       children: [
-                                                        Container(
-                                                          width: MediaQuery.sizeOf(context).width,
-                                                          height: 50,
-                                                          color: Colors.blueAccent,
-                                                          child: Row(
-                                                            children: [
-                                                              Container(
-                                                                width: MediaQuery
-                                                                            .sizeOf(
-                                                                                context)
-                                                                        .width *
-                                                                    0.2,
-                                                                height: 50,
-                                                                child: Row(
-                                                                  children: [
-                                                                    IconButton(
-                                                                      onPressed:
-                                                                          () {
-                                                                          
-                                                                          },
-                                                                      icon: Icon(Icons
-                                                                          .arrow_back_ios),
-                                                                      iconSize:
-                                                                          25,
-                                                                          color: Colors.white,
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                              Container(
-                                                                width: MediaQuery.sizeOf(context).width*0.8,
-                                                                child: Column(
-                                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                                  children: [
-                                                                    Row(
-                                                                      children: [
-                                                                        Text('Room Details Options',
-                                                                        style: TextStyle(
-                                                                          fontSize: 18,
-                                                                          fontWeight: FontWeight.bold,
-                                                                          color: Colors.white,
-                                                                        ),
-                                                                        ),
-                                                                      ],
-                                                                    )
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ],
+                                                        MaterialButton(
+                                                          onPressed: () {
+                                                            // Delete operation
+                                                            collectionReference
+                                                                .doc(docId)
+                                                                .delete()
+                                                                .then((_) {
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop(); // Close the dialog
+                                                            }).catchError(
+                                                                    (error) {
+                                                              print(
+                                                                  "Error deleting document: $error");
+                                                            });
+                                                          },
+                                                          child: Text(
+                                                            'Delete',
+                                                            style: TextStyle(
+                                                                fontSize: 16,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
                                                           ),
-                                                        ),
-                                                        SizedBox(
-                                                          height: 30,
-                                                        ),
-                                                        Container(
-                                                          child: Column(
-                                                            children: [
-                                                              //Start Room number
-                                                              Row(
-                                                                children: [
-                                                                  Padding(
-                                                                    padding:
-                                                                        const EdgeInsets
-                                                                            .only(
-                                                                      left: 10,
-                                                                      bottom: 5,
-                                                                    ),
-                                                                    child: Text(
-                                                                      'Room Number',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        fontSize:
-                                                                            18,
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              Container(
-                                                                width: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .width,
-                                                                child: Column(
-                                                                  children: [
-                                                                    Padding(
-                                                                      padding: const EdgeInsets
-                                                                          .only(
-                                                                          left:
-                                                                              10,
-                                                                          right:
-                                                                              10),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(20.0),
-                                                                        child:
-                                                                            TextField(
-                                                                          controller:
-                                                                              roomNoController,
-                                                                          keyboardType:
-                                                                              TextInputType.text,
-                                                                          decoration:
-                                                                              const InputDecoration(
-                                                                            border:
-                                                                                InputBorder.none,
-                                                                            filled:
-                                                                                true,
-                                                                            fillColor:
-                                                                                Colors.black12,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                              SizedBox(
-                                                                height: 20,
-                                                              ),
-                                                              //End Room number
-
-                                                              //Start Capacity
-                                                              Row(
-                                                                children: [
-                                                                  Padding(
-                                                                    padding:
-                                                                        const EdgeInsets
-                                                                            .only(
-                                                                      left: 10,
-                                                                      bottom: 5,
-                                                                    ),
-                                                                    child: Text(
-                                                                      'Capacity',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        fontSize:
-                                                                            18,
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              Container(
-                                                                width: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .width,
-                                                                child: Column(
-                                                                  children: [
-                                                                    Padding(
-                                                                      padding: const EdgeInsets
-                                                                          .only(
-                                                                          left:
-                                                                              10,
-                                                                          right:
-                                                                              10),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(20.0),
-                                                                        child:
-                                                                            TextField(
-                                                                          controller:
-                                                                              countController,
-                                                                          keyboardType:
-                                                                              TextInputType.number,
-                                                                          decoration:
-                                                                              const InputDecoration(
-                                                                            border:
-                                                                                InputBorder.none,
-                                                                            filled:
-                                                                                true,
-                                                                            fillColor:
-                                                                                Colors.black12,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                              SizedBox(
-                                                                height: 20,
-                                                              ),
-                                                              //End Capacity
-
-                                                              SizedBox(
-                                                                height: 20,
-                                                              ),
-
-                                                              //Start buttons
-                                                              Container(
-                                                                child: Row(
-                                                                  children: [
-                                                                    Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          0.5,
-                                                                      child:
-                                                                          Column(
-                                                                        children: [
-                                                                          MaterialButton(
-                                                                            onPressed:
-                                                                                () {
-                                                                              // Delete operation
-                                                                              collectionReference.doc(docId).delete().then((_) {
-                                                                                Navigator.of(context).pop(); // Close the dialog
-                                                                              }).catchError((error) {
-                                                                                print("Error deleting document: $error");
-                                                                              });
-                                                                            },
-                                                                            child:
-                                                                                Text('Delete',
-                                                                                style: TextStyle(
-                                                                                  fontSize: 16,
-                                                                                  fontWeight: FontWeight.bold
-                                                                                ),
-                                                                                ),
-                                                                            color:
-                                                                                Colors.red,
-                                                                            textColor:
-                                                                                Colors.white,
-                                                                            minWidth:
-                                                                                100,
-                                                                            height:
-                                                                                40,
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                    Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          0.5,
-                                                                      child:
-                                                                          Column(
-                                                                        children: [
-                                                                          MaterialButton(
-                                                                            onPressed:
-                                                                                () {
-                                                                              // Update operation
-                                                                              _updateData(docId);
-                                                                            },
-                                                                            child:
-                                                                                Text('Update',
-                                                                                style: TextStyle(
-                                                                                  fontSize: 16,
-                                                                                  fontWeight: FontWeight.bold
-                                                                                ),
-                                                                                ),
-                                                                            color:
-                                                                                Colors.blue,
-                                                                            textColor:
-                                                                                Colors.white,
-                                                                            minWidth:
-                                                                                100,
-                                                                            height:
-                                                                                40,
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                              //End buttons
-                                                            ],
-                                                          ),
+                                                          color: Color.fromARGB(
+                                                              255, 77, 88, 97),
+                                                          textColor:
+                                                              Colors.white,
+                                                          minWidth: 100,
+                                                          height: 40,
                                                         ),
                                                       ],
                                                     ),
                                                   ),
-                                                ),
-                                              );
-                                            },
-                                            child: Text(
-                                              'Options',
-                                              style: TextStyle(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.bold,
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        0.5,
+                                                    child: Column(
+                                                      children: [
+                                                        MaterialButton(
+                                                          onPressed: () {
+                                                            // Update operation
+                                                            _updateData(docId);
+                                                          },
+                                                          child: Text(
+                                                            'Update',
+                                                            style: TextStyle(
+                                                                fontSize: 16,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
+                                                          color: Color.fromARGB(
+                                                              255, 77, 88, 97),
+                                                          textColor:
+                                                              Colors.white,
+                                                          minWidth: 100,
+                                                          height: 40,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
-                                            color: Colors.green,
-                                            textColor: Colors.white,
-                                            minWidth: 80,
-                                            height: 30,
-                                          ),
-                                        ],
+                                            //End buttons
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ],
+                            );
+                          },
+                          
+                          child: Ink(
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 0.95,
+                              height: 80,
+                              color: Colors.black12,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.2,
+                                    height: 80,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(12.0),
+                                      child:
+                                          Image.asset('assets/images/room.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.75,
+                                    height: 80,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10),
+                                              child: Text(
+                                                'Room number  ',
+                                                style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.black54,
+                                                ),
+                                              ),
+                                            ),
+                                            Text(
+                                              doc['roomNo'],
+                                              style: TextStyle(
+                                                fontSize: 17,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black54,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10),
+                                              child: Text(
+                                                'Capacity  ',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.black54,
+                                                ),
+                                              ),
+                                            ),
+                                            Text(
+                                              doc['count'],
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black54,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
-                        //End Room Details
                       ],
                     );
                   },

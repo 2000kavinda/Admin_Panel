@@ -51,7 +51,7 @@ class _personalDataState extends State<personalData> {
       appBar: AppBar(
         title: Text(
           'Student Profile',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -60,8 +60,11 @@ class _personalDataState extends State<personalData> {
           },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 25,
+          color: Colors.black54,
         ),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.white,
+        elevation: 3,
+        bottomOpacity: 0.0,
       ),
       body: Column(
         children: [
@@ -526,7 +529,7 @@ class _personalDataState extends State<personalData> {
                                                                         height:
                                                                             50,
                                                                         color: Colors
-                                                                            .blueAccent,
+                                                                            .white,
                                                                         child:
                                                                             Row(
                                                                           children: [
@@ -538,7 +541,7 @@ class _personalDataState extends State<personalData> {
                                                                                 },
                                                                                 icon: Icon(Icons.arrow_back_ios),
                                                                                 iconSize: 25,
-                                                                                color: Colors.white,
+                                                                                color: Colors.black54,
                                                                               ),
                                                                             ),
                                                                             Container(
@@ -554,7 +557,7 @@ class _personalDataState extends State<personalData> {
                                                                                         style: TextStyle(
                                                                                           fontSize: 18,
                                                                                           fontWeight: FontWeight.bold,
-                                                                                          color: Colors.white,
+                                                                                          color: Colors.black54,
                                                                                         ),
                                                                                       ),
                                                                                     ],
@@ -899,7 +902,7 @@ class _personalDataState extends State<personalData> {
                                                                                       fontWeight: FontWeight.bold,
                                                                                     ),
                                                                                   ),
-                                                                                  color: Colors.blue,
+                                                                                  color: Color.fromARGB(255, 77, 88, 97),
                                                                                   textColor: Colors.white,
                                                                                   minWidth: 100,
                                                                                   height: 40,
